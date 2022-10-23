@@ -1,0 +1,65 @@
+/* Poppins */
+@font-face {
+    font-family: "poppins-regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../assets/fonts/poppins/Poppins-Regular.otf")
+      format("OpenType");
+  }
+  
+  @font-face {
+    font-family: "poppins-medium";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../assets/fonts/poppins/Poppins-Medium.otf")
+      format("OpenType");
+  }
+
+  @font-face {
+    font-family: "poppins-bold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../assets/fonts/poppins/Poppins-Bold.otf")
+      format("OpenType");
+  }
+
+/* Inter */
+
+@font-face {
+    font-family: "inter-regular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../assets/fonts/inter/Inter-Regular.otf")
+      format("OpenType");
+  }
+  
+  @font-face {
+    font-family: "inter-medium";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../assets/fonts/inter/Inter-Medium.otf")
+      format("OpenType");
+  }
+
+  @font-face {
+    font-family: "inter-bold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../assets/fonts/inter/Inter-Bold.otf")
+      format("OpenType");
+  }
+
+
+body {
+    padding: 48px;
+    background-color: #0F1318;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app {
+    color:red;
+}
+
+svg {
+    fill: currentColor;
+}
