@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { color, fontSize, space, textAlign, width } from "styled-system";
 import theme from "../styles/theme";
+import propTypes from 'prop-types';
 
 const sort = (props) => {
   switch (props.sort) {
@@ -9,14 +10,20 @@ const sort = (props) => {
       return `
           color: ${theme.colors.white};
           background-color: ${theme.colors.primary_500};
-  
+
           &:hover {
             background-color: ${theme.colors.primary_600};
           };
           &:focus {
             background-color: ${theme.colors.primary_500};
+            // border: 4px solid rgba(0, 101, 242, 0.4); how to deploy this?
           };
-        `;
+
+          &:disabled {
+            color: ${theme.colors.white_900};
+            background-color: ${theme.colors.black_600};
+          };
+        `
     case "secondary":
       return `
           color: ${theme.colors.white};
@@ -28,38 +35,153 @@ const sort = (props) => {
           &:focus {
             background-color: ${theme.colors.black_600};
           };
-        `;
+        `
   }
 };
+
+const size = (props) => {
+  switch (props.size) {
+    case "medium":
+      return `
+        padding: 10px 16px;
+      `
+    case "small":
+      return `
+        padding: 6px 12px;
+      `  
+  }
+}
+
+const outline = (props) => {
+  switch (props.outline) {
+    case "primary":
+      return `
+        border: 1px solid ${theme.colors.primary_500};
+        background-color: transparent;
+
+        &:hover {
+          background-color: ${theme.colors.primary_500};
+        };
+
+        &:focus {
+          background-color: ${theme.colors.black_600};
+        };
+
+        &:disabled {
+          border: 1px solid ${theme.colors.black_600};
+          background-color: transparent;
+        };
+      `
+    case "secondary":
+      return `
+      border: 1px solid ${theme.colors.black_600};
+      background-color: transparent;
+
+      &:hover {
+        background-color: ${theme.colors.black_600};
+      };
+
+      :focus {
+        background-color: ${theme.colors.black_700};
+      };
+      `  
+  }
+}
+
+const depth = (props) => {
+  switch (props.depth) {
+    case "primary":
+      return `
+        background: ${theme.colors.primary_500};
+        box-shadow: 
+        0px 4px 0px #003580,
+        0px 8px 0px rgba(0, 0, 0, 0.25),
+        inset 0px 1px 0px rgba(255, 255, 255, 0.25);
+        transform: translateY(0px)
+
+        &:hover {
+          background-color: ${theme.colors.primary_600};
+        };
+
+        &:active {
+          transform: translateY(2px);
+          box-shadow: 
+          0px 2px 0px #003580,
+          0px 4px 0px #0B0E12, 
+          inset 0px 1px 0px rgba(255, 255, 255, 0.25);
+        };
+      `
+    case "secondary":
+      return `
+      background: ${theme.colors.black_500};
+      box-shadow: 
+      0px 4px 0px #151B22,
+      0px 8px 0px rgba(0, 0, 0, 0.25),
+      inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+
+      &:hover {
+        background-color: ${theme.colors.black_600};
+      };
+
+      &:active {
+        transform: translateY(2px);
+        box-shadow: 
+        0px 2px 0px #151B22,
+        0px 4px 0px rgba(0, 0, 0, 0.25),
+        inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+      };
+      `  
+  }
+}
+
+
+// const icon-only = () => {
+//     return `
+//       padding: 10px;
+//       `
+//       // how to apply this one as prop on button
+// }
 
 export const Button = styled.button`
   font-family: poppins-bold;
   border-radius: 8px;
   border: none;
-  padding: 10px 16px;
-  outline: none;
+  display: flex;
   text-align: center;
   transition: all 0.1s ease-out;
   min-width: min-content;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  background-color: black;
+  background-color: transparent;
   color: white;
+  cursor: pointer;
 
-  :active {
-    transform: scale(0.99) translateY(2px);
+  &:active {
+    transform: scale(0.98);
     box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    transform: scale(1);
   }
 
   ${color}
   ${fontSize}
-    ${space}
-    ${width}
-    ${sort}
-    ${textAlign}
+  ${space}
+  ${width}
+  ${sort}
+  ${size}
+  ${outline}
+  ${depth}
+  ${textAlign}
 `;
 
-Button.displayName = "Button";
+Button.propTypes = {
+  disabled: propTypes.bool,
+};
+
+Button.displayName = "Button"
 
 export default Button;

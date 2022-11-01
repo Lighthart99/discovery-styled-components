@@ -2,7 +2,6 @@ import React from "react";
 
 const Arrow_right = ({ className, width, height }) => {
   return (
-    <div>
       <svg
         className={className}
         width={width}
@@ -16,7 +15,6 @@ const Arrow_right = ({ className, width, height }) => {
           />
         </g>
       </svg>
-    </div>
   );
 };
 

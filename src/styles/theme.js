@@ -134,8 +134,6 @@ const fontSizes = {
 // I copied these ones from Jacob's repo
 const maxWidths = ['40em', '52em', '64em', '80em', '96em', '104em']
 
-
-
 const theme = {
     breakpoints,
     space,

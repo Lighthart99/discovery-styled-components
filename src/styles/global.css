@@ -56,10 +56,30 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.app {
-    color:red;
-}
-
 svg {
     fill: currentColor;
+}
+
+.icon {
+    display: flex;
+}
+
+.icon-left {
+  margin: 0 8px 0 0;
+}
+
+.icon-right {
+  margin: 0 0 0 8px;
+}
+
+.icon-only {
+  margin: 0 0 0 0;
+}
+
+.grid {
+  grid-column-gap: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: start;
+  margin: 0 0 24px 0;
 }

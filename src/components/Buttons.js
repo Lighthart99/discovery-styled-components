@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Button, Flex, Spinner, Box } from "../primitives";
-import { useWiring, store } from "../libs/wiring";
-import { Inputs, Assets, Utils, Buttons } from "../components";
-import { useHistory, useLocation } from "react-router-dom";
+import { Button } from '../primitives/Button'
+import { Icon } from '../assets/icons/index';
 
-Button.Close = p => {
-  return (
-    <Button {...p} type="simple" p={0}>
-      <Assets.Icons.Close />
-    </Button>
-  );
-};
+// Button.primary = ({ buttonText }) => {
+//   return (
+//     <Button type='primary'>
+//       {buttonText}
+//     </Button>
+//   );
+// };
 
-// this file is made for actions
+// didn't succeed
+
+export default Button;
