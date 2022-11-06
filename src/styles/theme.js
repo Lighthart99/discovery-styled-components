@@ -119,16 +119,118 @@ const radius = {
   circle: '50%',
 }
 
-const fontSizes = {
-  // headers
-  heading_xxs: '0.702rem',
-  heading_xs: '0.79rem',
-  heading_sm: '.889rem',
-  heading_md:  '1rem',
-  heading_lg: '1.125rem',
-  heading_xl: '1.266rem',
-  heading_xxl: '1.424rem',
-  heading_xxl_2: '3.247rem',
+// Text Types
+const fontfamily = (props) => {
+  // eslint-disable-next-line
+  switch (props.fontfamily) {
+    case "poppins-bold":
+      return `
+        font-family: poppins-bold;
+      `
+    case "poppins-medium":
+      return `
+        font-family: poppins-medium;
+      `
+  }
+}  
+
+// Header text sizes
+const heading = (props) => {
+  // eslint-disable-next-line
+  switch (props.heading) {
+    case "XXL2":
+      return `
+        font-size: 48px;
+      `
+    case "XXL":
+      return `
+        font-size: 40px;
+      `
+    case "XL":
+      return `
+        font-size: 32px;
+     `
+     case "LG":
+      return `
+        font-size: 24px;
+        line-height: 32px;
+     `
+     case "MD":
+      return `
+        font-size: 20px;
+        line-height: 28px;
+      `
+    case "SM":
+      return `
+        font-size: 18px;
+        line-height: 28px;
+      `
+    case "XS":
+      return `
+        font-size: 16px;
+        line-height: 24px;
+      `
+      case "XXS":
+        return `
+          font-size: 14px;
+          line-height: 20px;
+        `
+  }
+}
+
+// Body text sizes
+const p = (props) => {
+  // eslint-disable-next-line
+  switch (props.p) {
+    case "XL":
+      return `
+        font-size: 48px;
+      `
+    case "LG":
+      return `
+        font-size: 40px;
+      `
+     case "MD":
+      return `
+        font-size: 20px;
+        line-height: 28px;
+      `
+    case "SM":
+      return `
+        font-size: 18px;
+        line-height: 28px;
+      `
+    case "XS":
+      return `
+        font-size: 16px;
+        line-height: 24px;
+      `
+  }
+}
+
+const iconSize = (props) => {
+  // eslint-disable-next-line
+  switch (props.iconSize) {
+    case "LG":
+      return `
+        width: 24px;
+        height: 24px;  
+      `
+    case "MD":
+      return `
+        width: 20px;
+        height: 20px;  
+      `
+    case "SM":
+      return `
+        width: 16px;
+        height: 16px;  
+      `
+  }
+}
+
+const Shadows = {
+  Inner_t_dropshadow: 'box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15), inset 0px 0.5px 0px rgba(255, 255, 255, 0.25);'
 }
 
 // I copied these ones from Jacob's repo
@@ -140,8 +242,12 @@ const theme = {
     colors,
     borders,
     radius,
-    fontSizes,
     maxWidths,
+    Shadows,
+    fontfamily,
+    iconSize,
+    heading,
+    p,
   }
   
   export default theme

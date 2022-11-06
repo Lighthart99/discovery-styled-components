@@ -51,7 +51,7 @@
 
 
 body {
-    padding: 48px;
+    margin: 0; 
     background-color: #0F1318;
     -webkit-font-smoothing: antialiased;
 }
@@ -82,4 +82,11 @@ svg {
   grid-auto-flow: column;
   justify-items: start;
   margin: 0 0 24px 0;
+}
+
+.sidebar {
+  max-width: 224px;
+  background-color: #171C24;
+  padding: 14px;
+  height: 100vh;
 }
