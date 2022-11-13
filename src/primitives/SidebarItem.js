@@ -2,6 +2,18 @@ import styled from "styled-components";
 import { color, fontSize, space, textAlign, width } from "styled-system";
 import theme from "../styles/theme";
 
+// const Size = (props) => {
+//   switch (props.size) {
+//     case "SM":
+//       return `
+//         padding: 6px 6px 8px 12px;
+//       `
+//     default:
+//       return `
+//       `
+//   }
+// }
+
 export const SidebarItem = styled.div`
   color: ${theme.colors.white_700};
   display: flex;
@@ -9,6 +21,7 @@ export const SidebarItem = styled.div`
   align-items: center;
   padding: 7px 8px 7px 12px;
   margin-bottom: 8px;
+  cursor: pointer;
 
   background: ${theme.colors.black_700};
   border-radius: 8px;

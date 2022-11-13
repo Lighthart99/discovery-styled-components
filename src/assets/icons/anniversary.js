@@ -9,7 +9,7 @@ export const Anniversary = ({ className, width, height }) => {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1245_59782)">
+      <g clipPath="url(#clip0_1245_59782)">
         <path
           d="M6.00531 6.55755L8.70717 16.3836L10.8157 15.4299L7.50288 3.3839L6.00531 6.55755Z"
         />

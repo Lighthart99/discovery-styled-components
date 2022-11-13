@@ -1,6 +1,6 @@
 import React from "react";
 
-const Chevron_up = ({ className, color, width, height }) => {
+const ChevronUp = ({ className, color, width, height }) => {
   return (
     <svg
     className={className}
@@ -16,4 +16,4 @@ const Chevron_up = ({ className, color, width, height }) => {
   );
 };
 
-export { Chevron_up };
+export { ChevronUp };

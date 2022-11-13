@@ -1,6 +1,6 @@
 import React from "react";
 
-const Arrow_up = ({ className, color, width, height }) => {
+const ArrowUp = ({ className, color, width, height }) => {
   return (
       <svg
         className={className}
@@ -16,4 +16,4 @@ const Arrow_up = ({ className, color, width, height }) => {
   );
 };
 
-export { Arrow_up };
+export { ArrowUp };

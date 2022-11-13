@@ -1,5 +1,4 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { color, fontSize, space, textAlign, width } from "styled-system";
 import theme from "../styles/theme";
 import propTypes from 'prop-types';
@@ -34,20 +33,26 @@ const sort = (props) => {
           }
           &:focus {
             background-color: ${theme.colors.black_600};
-          };
+            outline: 1px solid ${theme.colors.primary_500};
+            box-shadow: 0 0 0 4px ${theme.colors.primary_40};
+          }
         `
   }
 };
 
 const size = (props) => {
   switch (props.size) {
-    case "medium":
+    case "md":
       return `
         padding: 10px 16px;
       `
-    case "small":
+    case "sm":
       return `
         padding: 6px 12px;
+      `  
+    case "xs":
+      return `
+        padding: 6px 6px;
       `  
   }
 }
@@ -134,15 +139,7 @@ const depth = (props) => {
   }
 }
 
-
-// const icon-only = () => {
-//     return `
-//       padding: 10px;
-//       `
-//       // how to apply this one as prop on button
-// }
-
-export const Button = styled.button`
+const Button = styled.button`
   font-family: poppins-bold;
   border-radius: 8px;
   border: none;
@@ -176,7 +173,7 @@ export const Button = styled.button`
   ${outline}
   ${depth}
   ${textAlign}
-`;
+`
 
 Button.propTypes = {
   disabled: propTypes.bool,
@@ -184,4 +181,4 @@ Button.propTypes = {
 
 Button.displayName = "Button"
 
-export default Button;
+export default Button
