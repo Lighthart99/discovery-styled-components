@@ -17,11 +17,13 @@ const Direction = (props) => {
     switch (props.direction) {
         case "vertical":
             return `
-            -webkit-transform: translateY(-100%) rotate(90deg);
-            -webkit-transform-origin: left bottom;
+                height: 100%;
+                width: 2px;
             `
-        default:
+        case "horizontal":
             return `
+                height: 100%;
+                width: 2px;
             `
     }
 }
@@ -42,9 +44,6 @@ const Size = (props) => {
 // continue with this one, add size, rotate horizontal/veritcal to make easy line thicknesses
 
 const Divider = styled.div `
-    width: 100%;
-    height 2px;
-    display: flex;
     background-color: ${theme.colors.black_400};
 
     ${Color}

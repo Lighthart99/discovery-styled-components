@@ -170,11 +170,11 @@ const heading = (props) => {
         font-size: 16px;
         line-height: 24px;
       `
-      case "XXS":
-        return `
-          font-size: 14px;
-          line-height: 20px;
-        `
+    case "XXS":
+      return `
+        font-size: 14px;
+        line-height: 20px;
+      `
   }
 }
 

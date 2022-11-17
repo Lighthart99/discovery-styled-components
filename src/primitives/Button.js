@@ -15,8 +15,9 @@ const sort = (props) => {
           };
           &:focus {
             background-color: ${theme.colors.primary_500};
-            // border: 4px solid rgba(0, 101, 242, 0.4); how to deploy this?
-          };
+            outline: 1px solid ${theme.colors.primary_500};
+            box-shadow: 0 0 0 4px ${theme.colors.primary_40};
+          }
 
           &:disabled {
             color: ${theme.colors.white_900};
@@ -46,14 +47,22 @@ const size = (props) => {
       return `
         padding: 10px 16px;
       `
+    case "md-icon-only":
+      return `
+         padding: 10px 10px;
+        `
     case "sm":
       return `
-        padding: 6px 12px;
-      `  
+          padding: 6px 12px;
+      `
+    case "sm-icon-only":
+      return `
+          padding: 6px 6px;
+        `  
     case "xs":
       return `
         padding: 6px 6px;
-      `  
+      `
   }
 }
 

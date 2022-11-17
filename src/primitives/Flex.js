@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { flexbox } from 'styled-system'
+import { flexbox, space } from 'styled-system'
 
 const Flex = styled.div`
   display: flex;
-  flexWrap: ${p => p.wrap ? 'wrap' : 'nowrap'}
+  flexWrap: ${p => p.wrap ? 'wrap' : 'nowrap'};
+  ${space}
   ${flexbox}
 `
 

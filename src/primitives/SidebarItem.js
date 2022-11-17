@@ -15,6 +15,7 @@ import theme from "../styles/theme";
 // }
 
 export const SidebarItem = styled.div`
+  height: 26px;
   color: ${theme.colors.white_700};
   display: flex;
   flex-direction: row;
@@ -27,6 +28,7 @@ export const SidebarItem = styled.div`
   border-radius: 8px;
 
   &:hover {
+    color: ${theme.colors.white};
     background: ${theme.colors.black_500};
     box-shadow: ${theme.Shadows.Inner_t_dropshadow}
   }

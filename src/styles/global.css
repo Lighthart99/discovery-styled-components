@@ -84,13 +84,13 @@ svg {
   margin: 0 0 24px 0;
 }
 
-/* .sidebar {
+.sidebar {
   width: 224px;
   max-width: 224px;
   background-color: #171C24;
   padding: 14px;
   height: 100vh;
-} */
+}
 
 .sidebar-divider {
   margin: 0 12px 0 22px;

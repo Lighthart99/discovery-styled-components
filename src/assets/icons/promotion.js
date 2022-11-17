@@ -6,7 +6,6 @@ export const Promotion = ({ className, width, height }) => {
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_1245_62999)">

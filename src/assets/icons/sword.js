@@ -6,7 +6,6 @@ export const Sword = ({ className, width, height }) => {
       className={className}
       width={width}
       height={height}
-      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clip-path="url(#clip0_1311_75687)">

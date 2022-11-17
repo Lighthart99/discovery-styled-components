@@ -1,23 +1,19 @@
 import React from 'react'
 import { Icon } from '../assets/icons/index'
-import { Text, SidebarItem, Button } from '../primitives/index'
-import useState from 'react';
+import { Text, SidebarItem, Button, Flex } from '../primitives/index'
 
 
-
-const NavItem = ({ iconName, Label, Dropdown, onClick }) => {
+const NavItem = ({ iconName, Label, Dropdown, onClick, noIcon }) => {
   return (
         <SidebarItem>
-          <Icon name={iconName}/>
-          <Text.Heading sort="poppins-bold" Size="XXS">{Label}</Text.Heading> 
-          {/* <Icon name="chevron_down"/> */}
+          <Flex alignItems="center" flexGrow="1">
+            <Icon name={iconName}/>
+              <Text.Heading_XXS sort="poppins-bold" Size="XXS" ml={2}>{Label}</Text.Heading_XXS> 
+          </Flex>
 
-          {Dropdown && <Button sort="secondary" size="xs">
-            <Icon name="chevron_down" onClick={onClick}/>
+          {Dropdown && <Button sort="secondary" size="xs" onClick={onClick}>
+            <Icon name="chevron_down"/>
           </Button>}
-          
-          {/* <Button.Secondary label="test"/>  */}
-          {/* this is the problem */}
         </SidebarItem>
   );
 }
