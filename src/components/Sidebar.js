@@ -1,31 +1,59 @@
-import React, { useState } from 'react'
-import { NavItem } from './index'
-import '../styles/global.css'
-import { Divider, Flex, Box } from '../primitives/index'
+import React, { useState } from "react";
+import { NavItem } from "./index";
+import "../styles/global.css";
+import { Box, Divider, Flex } from "../primitives/index";
+import { motion } from "framer-motion";
+import theme from "../styles/theme";
+import { display, flex } from "styled-system";
 
 const Sidebar = () => {
-  const [isShown, setIsShown] = useState(false);
-  const [isShown2, setIsShown2] = useState(false);
-  const [isShown3, setIsShown3] = useState(false);
-
-  const openDropdown = event => {
-    setIsShown(current => !current);
+  const menuDropdown = {
+    closed: { 
+      // display: "none",
+      height: 0, 
+      overflow: "hidden", 
+      opacity: 0,
+      },
+    open: { 
+      height: "auto", 
+      display: "show", 
+      opacity: 1, 
+      // display: "block" it works with when you put these values in motion.div line
+    },
   };
 
-  const openDropdown2 = event => {
-    setIsShown2(current => !current);
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
-  const openDropdown3 = event => {
-    setIsShown3(current => !current);
+  const [isOpen2, setIsOpen2] = useState(false);
+
+  const [isOpen3, setIsOpen3] = useState(false);
+
+  const dropdownButton = {
+    closed: { rotate: 0 },
+    open: { rotate: -90 },
   };
 
   return (
-    <div className='sidebar'>
-        <NavItem iconName="games" Label="Casino" Dropdown onClick={openDropdown}/>
-        {isShown && <Flex.Row flexGrow="1">
-          <div className='sidebar-divider'>
-            <Divider direction="vertical"/>
+    <Box
+      width="224px"
+      minWidth="224px"
+      maxWidth="224px"
+      padding="14px"
+      height="100vh"
+      maxHeight="100vh"
+      overflow="scroll"
+      backgroundColor={theme.colors.black_700}
+    >
+      <NavItem
+        iconName="games"
+        Label="Casino"
+        Dropdown
+        onClick={() => setIsOpen((isOpen) => !isOpen)}
+      />
+      <motion.div animate={isOpen ? "open" : "closed"} variants={menuDropdown}>
+        <Flex flexGrow="1">
+          <div className="sidebar-divider">
+            <Divider direction="vertical" />
           </div>
           <Flex.Column flexGrow="1">
             <NavItem iconName="heart" Label="Favorites" />
@@ -36,12 +64,20 @@ const Sidebar = () => {
             <NavItem iconName="games" Label="Roulette" />
             <NavItem iconName="games" Label="Blackjack" />
           </Flex.Column>
-        </Flex.Row> }
-        {isShown && <div />}
+        </Flex>
+      </motion.div>
 
-        <NavItem iconName="sports" Label="Sports" Dropdown onClick={openDropdown2}/>
-        {isShown2 && <Flex flexGrow="1">
-            <Divider direction="vertical"/>
+      <NavItem
+        iconName="sports"
+        Label="Sports"
+        Dropdown
+        onClick={() => setIsOpen2((isOpen2) => !isOpen2)}
+      />
+      <motion.div animate={isOpen2 ? "open" : "closed"} variants={menuDropdown}>
+        <Flex flexGrow="1">
+          <div className="sidebar-divider">
+            <Divider direction="vertical" />
+          </div>
           <Flex.Column flexGrow="1">
             <NavItem iconName="heart" Label="My Bets" />
             <NavItem iconName="heart" Label="Favorites" />
@@ -58,17 +94,23 @@ const Sidebar = () => {
             <NavItem iconName="heart" Label="Handball" />
             <NavItem iconName="heart" Label="Ice Hockey" />
           </Flex.Column>
-        </Flex> }
-        {isShown2 && <div />}
+        </Flex>
+      </motion.div>
 
-        <NavItem iconName="cashier" Label="Cashier"/>
-        <NavItem iconName="vault" Label="Vault"/>
-        <NavItem iconName="promotion" Label="Promotion" Dropdown onClick={openDropdown3}/>
-        {isShown3 && <Flex>
-          <div className='sidebar-divider'>
-            <Divider direction="vertical"/>
+      <NavItem iconName="cashier" Label="Cashier" />
+      <NavItem iconName="vault" Label="Vault" />
+      <NavItem
+        iconName="promotion"
+        Label="Promotion"
+        Dropdown
+        onClick={() => setIsOpen3((isOpen3) => !isOpen3)}
+      />
+      <motion.div animate={isOpen3 ? "open" : "closed"} variants={menuDropdown}>
+        <Flex flexGrow="1">
+          <div className="sidebar-divider">
+            <Divider direction="vertical" />
           </div>
-          <div>
+          <Flex.Column flexGrow="1">
             <NavItem iconName="heart" Label="$100,000 Anniv..." />
             <NavItem iconName="heart" Label="Las Vegas Anni..." />
             <NavItem iconName="heart" Label="$10,000 Hacks..." />
@@ -77,13 +119,14 @@ const Sidebar = () => {
             <NavItem iconName="heart" Label="$1000 Daily Wa..." />
             <NavItem iconName="heart" Label="$1000 Daily Wa..." />
             <NavItem iconName="heart" Label="Beat Viktor Mul..." />
-          </div>
-        </Flex> }
-        {isShown3 && <div />}
-        <NavItem iconName="vip" Label="VIP"/>
-        <NavItem iconName="anniversary" Label="Anniversary"/>
-    </div>
-  )
-}
+          </Flex.Column>
+        </Flex>
+      </motion.div>
 
-export default Sidebar
+      <NavItem iconName="vip" Label="VIP" />
+      <NavItem iconName="anniversary" Label="Anniversary" />
+    </Box>
+  );
+};
+
+export default Sidebar;

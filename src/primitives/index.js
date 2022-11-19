@@ -4,4 +4,5 @@ export { default as Text } from './text'
 export { default as Flex } from './Flex'
 export { default as Divider } from './Divider'
 export { default as Box } from './Box'
-
+export { default as Header } from './header'
+export { default as Image } from './Image'

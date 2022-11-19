@@ -5,7 +5,7 @@ import { Box, Button, Flex } from '../primitives'
 
 const Topbar = () => {
   return (
-        <Flex p={4} alignItems="flex-start" flexGrow="1">
+        <Flex p={4} alignItems="flex-start">
             <Flex alignItems="center" flexGrow="1">
                 <Box mr={4}>
                     <Button sort="secondary" size="sm-icon-only">

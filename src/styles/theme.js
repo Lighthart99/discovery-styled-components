@@ -1,3 +1,5 @@
+import '../styles/global.css';
+
 const breakpoints = ['20em', '25,875em', '64em', '75em']
 // Desktop -- 1200px - 75em
 // Tablet -- 1024px - 64em
@@ -119,20 +121,31 @@ const radius = {
   circle: '50%',
 }
 
-// Text Types
-const fontfamily = (props) => {
-  // eslint-disable-next-line
-  switch (props.fontfamily) {
-    case "poppins-bold":
-      return `
-        font-family: poppins-bold;
-      `
-    case "poppins-medium":
-      return `
-        font-family: poppins-medium;
-      `
-  }
-}  
+// // Text Types
+// const fontfamily = (props) => {
+//   // eslint-disable-next-line
+//   switch (props.fontfamily) {
+//     case "poppins-bold":
+//       return `
+//         font-family: poppins-bold;
+//       `
+//     case "poppins-medium":
+//       return `
+//         font-family: poppins-medium;
+//       `
+//   }
+// }  
+
+// const fontFamily = {
+//   poppinsBold: 'font-family: poppins-bold',
+//   poppinsMedium: 'font-family: poppins-medium',
+//   poppinsRegular: 'font-family: poppins-regular',
+//   interRegular: 'font-family: inter-regular',
+//   interMedium: 'font-family: inter-medium',
+//   interBold: 'font-family: inter-bold',
+// }
+
+// this shit doesnt work
 
 // Header text sizes
 const heading = (props) => {
@@ -244,7 +257,7 @@ const theme = {
     radius,
     maxWidths,
     Shadows,
-    fontfamily,
+    // fontFamily,
     iconSize,
     heading,
     p,

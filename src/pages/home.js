@@ -1,14 +1,16 @@
-import { Sidebar, Topbar } from '../components/index';
+import { Sidebar, Topbar, Headers } from '../components/index';
 import { Flex } from '../primitives';
 import '../styles/global.css';
 
 export function Home () {
   return (
-    <Flex>
+    <Flex flexGrow="1">
      <Sidebar />
-      <Flex flexGrow="1">
+      <Flex.Column flexGrow="1">
         <Topbar />
-      </Flex>
+        {/* add container here rob */}
+        <Headers />
+      </Flex.Column>
     </Flex>
   );
 }
