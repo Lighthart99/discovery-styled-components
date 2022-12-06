@@ -1,89 +1,71 @@
 /* Poppins */
 @font-face {
-    font-family: "poppins-regular";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../assets/fonts/poppins/Poppins-Regular.otf")
-      format("OpenType");
-  }
-  
-  @font-face {
-    font-family: "poppins-medium";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../assets/fonts/poppins/Poppins-Medium.otf")
-      format("OpenType");
-  }
+  font-family: "poppins-regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/poppins/Poppins-Regular.otf") format("OpenType");
+}
 
-  @font-face {
-    font-family: "poppins-bold";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../assets/fonts/poppins/Poppins-Bold.otf")
-      format("OpenType");
-  }
+@font-face {
+  font-family: "poppins-medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/poppins/Poppins-Medium.otf") format("OpenType");
+}
+
+@font-face {
+  font-family: "poppins-bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/poppins/Poppins-Bold.otf") format("OpenType");
+}
 
 /* Inter */
 
 @font-face {
-    font-family: "inter-regular";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../assets/fonts/inter/Inter-Regular.otf")
-      format("OpenType");
-  }
-  
-  @font-face {
-    font-family: "inter-medium";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../assets/fonts/inter/Inter-Medium.otf")
-      format("OpenType");
-  }
+  font-family: "inter-regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/inter/Inter-Regular.otf") format("OpenType");
+}
 
-  @font-face {
-    font-family: "inter-bold";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../assets/fonts/inter/Inter-Bold.otf")
-      format("OpenType");
-  }
+@font-face {
+  font-family: "inter-medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/inter/Inter-Medium.otf") format("OpenType");
+}
 
+@font-face {
+  font-family: "inter-bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/inter/Inter-Bold.otf") format("OpenType");
+}
 
 body {
-    margin: 0; 
-    background-color: #0F1318;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background-color: #0f1318;
+  -webkit-font-smoothing: antialiased;
 }
 
 svg {
-    fill: currentColor;
-}
-
-.icon {
-    display: flex;
-}
-
-.icon-left {
-  margin: 0 8px 0 0;
-}
-
-.icon-right {
-  margin: 0 0 0 8px;
-}
-
-.icon-only {
-  margin: 0 0 0 0;
-}
-
-.grid {
-  grid-column-gap: 10px;
-  display: grid;
-  grid-auto-flow: column;
-  justify-items: start;
-  margin: 0 0 24px 0;
+  display: flex;
+  fill: currentColor;
 }
 
 .sidebar-divider {
   margin: 0 12px 0 20px;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(5, 8, 10, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

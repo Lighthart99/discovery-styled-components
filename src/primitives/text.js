@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { color, textAlign, space, flexbox, fontSize, fontFamily, lineHeight } from "styled-system";
+import { color, textAlign, space, flexbox, fontSize, fontFamily, lineHeight, justifyContent } from "styled-system";
 import theme from "../styles/theme";
 
 const Text = styled.div`
@@ -12,14 +12,16 @@ const Text = styled.div`
   ${fontFamily}
   ${fontSize}
   ${lineHeight}
+  ${justifyContent}
 `
 
-Text.Heading_XXS = ({ children, ...props }) => {
+Text.Heading_XXS = ({ children, textColor, ...props }) => {
   return (
     <Text
       fontFamily="poppins-medium"
       fontSize="14px"
       lineHeight="20px"
+      color={textColor}
       {...props}
     >
       {children}
@@ -27,7 +29,8 @@ Text.Heading_XXS = ({ children, ...props }) => {
   );
 };
 
-Text.Heading_XXL = ({ children, ...props }) => {
+
+Text.Heading_XXL = ({ children, textColor, ...props }) => {
   return (
     <Text
       fontFamily="poppins-medium"
@@ -39,12 +42,27 @@ Text.Heading_XXL = ({ children, ...props }) => {
   );
 };
 
-Text.Heading_LG = ({ children, ...props }) => {
+Text.Heading_LG = ({ children, textColor, ...props }) => {
   return (
     <Text
       fontFamily="poppins-bold"
       fontSize="24px"
       line-height="32px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+Text.Heading_MD = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="poppins-bold"
+      fontSize="20px"
+      line-height="28px"
+      color={textColor}
       {...props}
     >
       {children}

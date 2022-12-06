@@ -4,53 +4,57 @@ import "../styles/global.css";
 import { Box, Divider, Flex } from "../primitives/index";
 import { motion } from "framer-motion";
 import theme from "../styles/theme";
-import { display, flex } from "styled-system";
+import { Button } from "../components/index";
+import { Icon } from "../assets/icons";
 
-const Sidebar = () => {
-  const menuDropdown = {
-    closed: { 
-      // display: "none",
-      height: 0, 
-      overflow: "hidden", 
-      opacity: 0,
-      },
-    open: { 
-      height: "auto", 
-      display: "show", 
-      opacity: 1, 
-      // display: "block" it works with when you put these values in motion.div line
-    },
-  };
-
+const Sidebar = ({
+  AnimateNavText,
+  AnimateLabel,
+  AnimateDropdownArrow,
+  Size,
+  Height,
+}) => {
+  // 3 dropdown menus
   const [isOpen, setIsOpen] = useState(false);
-
   const [isOpen2, setIsOpen2] = useState(false);
-
   const [isOpen3, setIsOpen3] = useState(false);
-
-  const dropdownButton = {
-    closed: { rotate: 0 },
-    open: { rotate: -90 },
-  };
 
   return (
     <Box
-      width="224px"
-      minWidth="224px"
-      maxWidth="224px"
+      overflow="scroll"
       padding="14px"
       height="100vh"
       maxHeight="100vh"
-      overflow="scroll"
       backgroundColor={theme.colors.black_700}
     >
-      <NavItem
-        iconName="games"
-        Label="Casino"
-        Dropdown
-        onClick={() => setIsOpen((isOpen) => !isOpen)}
-      />
-      <motion.div animate={isOpen ? "open" : "closed"} variants={menuDropdown}>
+      <motion.div animateText={AnimateNavText}>
+        <NavItem
+          iconName="games"
+          Label="Casino"
+          Dropdown
+          Animate={isOpen ? "open" : "closed"}
+          onClick={() => setIsOpen(!isOpen)}
+          AnimateLabel={AnimateLabel}
+          AnimateDropdownArrow={AnimateDropdownArrow}
+          Size={Size}
+          Height={Height}
+          Color={isOpen ? "#fff" : ""} // ask jacob how to attach this to design system
+          backgroundColor={isOpen ? "#26303C" : ""} // ask jacob how to attach this to design system
+        />
+      </motion.div>
+      <motion.div
+        // animate={isOpen ? "open" : "closed"}
+        // variants={menuDropdown}
+        initial={{
+          height: 0,
+          opacity: 0,
+          overflow: "hidden",
+        }}
+        animate={{
+          height: isOpen ? "auto" : 0,
+          opacity: isOpen ? 1 : 0,
+        }}
+      >
         <Flex flexGrow="1">
           <div className="sidebar-divider">
             <Divider direction="vertical" />
@@ -71,9 +75,26 @@ const Sidebar = () => {
         iconName="sports"
         Label="Sports"
         Dropdown
-        onClick={() => setIsOpen2((isOpen2) => !isOpen2)}
+        Animate={isOpen2 ? "open" : "closed"}
+        onClick={() => setIsOpen2(!isOpen2)}
+        AnimateLabel={AnimateLabel}
+        AnimateDropdownArrow={AnimateDropdownArrow}
+        Size={Size}
+        Height={Height}
+        Color={isOpen2 ? "#fff" : ""} // ask jacob how to attach this to design system
+        backgroundColor={isOpen2 ? "#26303C" : ""} // ask jacob how to attach this to design system
       />
-      <motion.div animate={isOpen2 ? "open" : "closed"} variants={menuDropdown}>
+      <motion.div
+        initial={{
+          height: 0,
+          opacity: 0,
+          overflow: "hidden",
+        }}
+        animate={{
+          height: isOpen2 ? "auto" : 0,
+          opacity: isOpen2 ? 1 : 0,
+        }}
+      >
         <Flex flexGrow="1">
           <div className="sidebar-divider">
             <Divider direction="vertical" />
@@ -97,15 +118,44 @@ const Sidebar = () => {
         </Flex>
       </motion.div>
 
-      <NavItem iconName="cashier" Label="Cashier" />
-      <NavItem iconName="vault" Label="Vault" />
+      <NavItem
+        iconName="cashier"
+        Label="Cashier"
+        AnimateLabel={AnimateLabel}
+        Size={Size}
+        Height={Height}
+      />
+      <NavItem
+        iconName="vault"
+        Label="Vault"
+        AnimateLabel={AnimateLabel}
+        Size={Size}
+        Height={Height}
+      />
       <NavItem
         iconName="promotion"
         Label="Promotion"
         Dropdown
-        onClick={() => setIsOpen3((isOpen3) => !isOpen3)}
+        Animate={isOpen3 ? "open" : "closed"}
+        onClick={() => setIsOpen3(!isOpen3)}
+        AnimateLabel={AnimateLabel}
+        AnimateDropdownArrow={AnimateDropdownArrow}
+        Size={Size}
+        Height={Height}
+        Color={isOpen3 ? "#fff" : ""} // ask jacob how to attach this to design system
+        backgroundColor={isOpen3 ? "#26303C" : ""} // ask jacob how to attach this to design system
       />
-      <motion.div animate={isOpen3 ? "open" : "closed"} variants={menuDropdown}>
+      <motion.div
+        initial={{
+          height: 0,
+          opacity: 0,
+          overflow: "hidden",
+        }}
+        animate={{
+          height: isOpen3 ? "auto" : 0,
+          opacity: isOpen3 ? 1 : 0,
+        }}
+      >
         <Flex flexGrow="1">
           <div className="sidebar-divider">
             <Divider direction="vertical" />
@@ -123,10 +173,24 @@ const Sidebar = () => {
         </Flex>
       </motion.div>
 
-      <NavItem iconName="vip" Label="VIP" />
-      <NavItem iconName="anniversary" Label="Anniversary" />
+      <NavItem
+        iconName="vip"
+        Label="VIP"
+        AnimateLabel={AnimateLabel}
+        Size={Size}
+        Height={Height}
+      />
+      <NavItem
+        iconName="anniversary"
+        Label="Anniversary"
+        AnimateLabel={AnimateLabel}
+        Size={Size}
+        Height={Height}
+      />
     </Box>
   );
 };
+
+// add for dropdown button a 'active' state
 
 export default Sidebar;

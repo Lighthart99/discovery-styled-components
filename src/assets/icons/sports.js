@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Sports = ({ className, width, height }) => {
+export const Sports = ({ className, width, height, ...props }) => {
   return (
     <svg
       className={className}

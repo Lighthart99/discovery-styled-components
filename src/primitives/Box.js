@@ -26,15 +26,15 @@ import {
   fontFamily,
   boxShadow,
   zIndex,
+  justifyContent,
+  alignItems,
+  display,
+  overflow,
+  margin,
 } from 'styled-system'
 
 const Box = styled.div`
   box-sizing: border-box;
-  // transition: all 0.2s ease-in-out;
-
-  // shadow-bottom: ${p =>
-    p.shadowBottom ? '0px 10px 10px -10px black' : 'none'}
-  // shadow-top: ${p => (p.shadowTop ? '0px -10px 10px -10px black' : 'none')}
 
   ${zIndex}
   ${boxShadow}
@@ -61,6 +61,12 @@ const Box = styled.div`
   ${minHeight}
   ${maxHeight}
   ${fontFamily}
+  ${zIndex}
+  ${justifyContent}
+  ${alignItems}
+  ${display}
+  ${overflow}
+  ${margin}
 `
 
 Box.displayName = 'Box'

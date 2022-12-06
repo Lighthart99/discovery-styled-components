@@ -25,13 +25,13 @@ const Icon = (props) => {
   // eslint-disable-next-line
   switch (props.name.toLowerCase()) {
     case "arrow_right":
-      return <ArrowRight className="icon" width="16" height="16" {...props} />;
+      return <ArrowRight className={props.className} width="16" height="16" {...props} />;
     case "arrow_up":
-      return <ArrowUp className="icon" width="16" height="16" {...props} />;
+      return <ArrowUp className={props.className} width="16" height="16" {...props} />;
     case "arrow_left":
-      return <ArrowLeft className="icon" width="16" height="16" {...props} />;
+      return <ArrowLeft className={props.className} width="16" height="16" {...props} />;
     case "arrow_down":
-      return <ArrowDown className="icon" width="16" height="16" {...props} />;
+      return <ArrowDown className={props.className} width="16" height="16" {...props} />;
     
     case "chevron_right":
       return <ChevronRight className="icon" width="16" height="16" {...props} />;

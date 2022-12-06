@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { color, fontSize, space, textAlign, width } from "styled-system";
+import { backgroundColor, color, fontSize, space, textAlign, width } from "styled-system";
 import theme from "../styles/theme";
 import propTypes from 'prop-types';
+import { Icon } from "../assets/icons/index";
 
 const sort = (props) => {
   switch (props.sort) {
@@ -12,7 +13,8 @@ const sort = (props) => {
 
           &:hover {
             background-color: ${theme.colors.primary_600};
-          };
+          }
+
           &:focus {
             background-color: ${theme.colors.primary_500};
             outline: 1px solid ${theme.colors.primary_500};
@@ -49,7 +51,7 @@ const size = (props) => {
       `
     case "md-icon-only":
       return `
-         padding: 10px 10px;
+         padding: 12px 12px;
         `
     case "sm":
       return `
@@ -57,11 +59,11 @@ const size = (props) => {
       `
     case "sm-icon-only":
       return `
-          padding: 6px 6px;
+          padding: 9px 9px;
         `  
     case "xs":
       return `
-        padding: 6px 6px;
+        padding: 7px 7px;
       `
   }
 }
@@ -187,6 +189,7 @@ const Button = styled.button`
 Button.propTypes = {
   disabled: propTypes.bool,
 };
+
 
 Button.displayName = "Button"
 

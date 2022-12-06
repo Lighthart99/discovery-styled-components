@@ -11,19 +11,19 @@ import {
 
 import Box from './Box'
 
-const type = props => {
-  switch (props.type) {
-    case 'steam':
-      return `
-        filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5)) saturate(123%) contrast(110%);
-      `
-    default:
-      return `
-      `
-  }
-}
+// const type = props => {
+//   switch (props.type) {
+//     case 'steam':
+//       return `
+//         filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5)) saturate(123%) contrast(110%);
+//       `
+//     default:
+//       return `
+//       `
+//   }
+// }
 
-const mainImg = styled.div`
+const Img = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -31,21 +31,18 @@ const mainImg = styled.div`
   ${backgroundPosition}
   ${backgroundImage}
   ${backgroundSize}
-  ${type}
   ${height}
   ${width}
 `
 
-const Image = ({ children, ...props }) => (
-  <mainImg {...props} backgroundImage={backgroundImage}>
-    {children}
-  </mainImg>
-)
+const Image = ({ children, ...props }) => {
+  return (
+    <Img {...props} backgroundImage={`url(${props.src})`}>
+      {children}
+    </Img>
+  )
+}
 
 Image.displayName = 'Image'
-
-Image.defaultProps = {
-  borderRadius: 'normal',
-}
 
 export default Image

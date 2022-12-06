@@ -246,6 +246,14 @@ const Shadows = {
   Inner_t_dropshadow: 'box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15), inset 0px 0.5px 0px rgba(255, 255, 255, 0.25);'
 }
 
+const transitions = {
+  Default: "transition: all 2s ease-out",
+}
+
+// const transform = {
+//   Default: "transform: scale(0.8)"
+// }
+
 // I copied these ones from Jacob's repo
 const maxWidths = ['40em', '52em', '64em', '80em', '96em', '104em']
 
@@ -261,6 +269,7 @@ const theme = {
     iconSize,
     heading,
     p,
+    transitions,
   }
   
   export default theme

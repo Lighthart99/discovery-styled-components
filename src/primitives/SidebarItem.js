@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, fontSize, space, textAlign, width } from "styled-system";
+import { alignItems, color, fontSize, space, textAlign, width, height, Transform } from "styled-system";
 import theme from "../styles/theme";
 
 // const Size = (props) => {
@@ -14,29 +14,34 @@ import theme from "../styles/theme";
 //   }
 // }
 
-export const SidebarItem = styled.div`
-  height: 26px;
+export const SidebarItem = styled.div.attrs(props => ({
+  padding: props.size || "7px 8px 7px 10px;",
+  height: props.height || "26px",
+}))`
+
+  height: ${props => props.height};
   color: ${theme.colors.white_700};
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding: 7px 8px 7px 12px;
+  padding: ${props => props.padding};
   margin-bottom: 8px;
   cursor: pointer;
+  transition: all 0.1s ease-out;
 
-  background: ${theme.colors.black_700};
+  background-color: ${theme.colors.black_700};
   border-radius: 8px;
 
   &:hover {
     color: ${theme.colors.white};
-    background: ${theme.colors.black_500};
+    background-color: ${theme.colors.black_500};
     box-shadow: ${theme.Shadows.Inner_t_dropshadow}
   }
 
   &:active {
     color: ${theme.colors.white};
-    background: ${theme.colors.black_500};
-    box-shadow: ${theme.Shadows.Inner_t_dropshadow}
+    background-color: ${theme.colors.black_500};
+    box-shadow: ${theme.Shadows.Inner_t_dropshadow};
+    transform: scale(0.98);
   }
 
   ${color}
@@ -45,6 +50,8 @@ export const SidebarItem = styled.div`
   ${width}
   ${textAlign}
   ${fontSize}
+  ${alignItems}
+  ${height}
 `
 
 export default SidebarItem

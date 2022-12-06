@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { flexbox, space } from 'styled-system'
+import { flexbox, justifyContent, margin, space, width, height, alignItems } from 'styled-system'
 
 const Flex = styled.div`
   display: flex;
   flexWrap: ${p => p.wrap ? 'wrap' : 'nowrap'};
   ${space}
   ${flexbox}
+  ${justifyContent}
+  ${margin}
+  ${width}
+  ${height}
+  ${alignItems}
 `
 
 Flex.displayName = 'Flex'
