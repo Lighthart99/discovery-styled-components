@@ -20,28 +20,59 @@ import { Vip } from "./vip";
 import { Sword } from "./sword";
 import { Heart } from "./heart";
 import { Chips } from "./chips";
+import { Close } from "./close";
 
 const Icon = (props) => {
   // eslint-disable-next-line
   switch (props.name.toLowerCase()) {
     case "arrow_right":
-      return <ArrowRight className={props.className} width="16" height="16" {...props} />;
+      return (
+        <ArrowRight
+          className={props.className}
+          width="16"
+          height="16"
+          {...props}
+        />
+      );
     case "arrow_up":
-      return <ArrowUp className={props.className} width="16" height="16" {...props} />;
+      return (
+        <ArrowUp
+          className={props.className}
+          width="16"
+          height="16"
+          {...props}
+        />
+      );
     case "arrow_left":
-      return <ArrowLeft className={props.className} width="16" height="16" {...props} />;
+      return (
+        <ArrowLeft
+          className={props.className}
+          width="16"
+          height="16"
+          {...props}
+        />
+      );
     case "arrow_down":
-      return <ArrowDown className={props.className} width="16" height="16" {...props} />;
-    
+      return (
+        <ArrowDown
+          className={props.className}
+          width="16"
+          height="16"
+          {...props}
+        />
+      );
+
     case "chevron_right":
-      return <ChevronRight className="icon" width="16" height="16" {...props} />;
+      return (
+        <ChevronRight className="icon" width="16" height="16" {...props} />
+      );
     case "chevron_up":
-       return <ChevronUp className="icon" width="16" height="16" {...props} />;
+      return <ChevronUp className="icon" width="16" height="16" {...props} />;
     case "chevron_left":
-       return <ChevronLeft className="icon" width="16" height="16" {...props} />;
+      return <ChevronLeft className="icon" width="16" height="16" {...props} />;
     case "chevron_down":
-      return <ChevronDown className="icon" width="16" height="16" {...props} />;  
-    
+      return <ChevronDown className="icon" width="16" height="16" {...props} />;
+
     case "anniversary":
       return <Anniversary width="20" height="20" {...props} />;
     case "cashier":
@@ -51,17 +82,19 @@ const Icon = (props) => {
     case "promotion":
       return <Promotion width="20" height="20" {...props} />;
     case "sports":
-        return <Sports width="20" height="20" {...props} />;
+      return <Sports width="20" height="20" {...props} />;
     case "vault":
-        return <Vault width="20" height="20" {...props} />;
+      return <Vault width="20" height="20" {...props} />;
     case "vip":
-        return <Vip  width="20" height="20" {...props} />;
+      return <Vip width="20" height="20" {...props} />;
     case "heart":
-        return <Heart  width="20" height="20" {...props} />;
+      return <Heart width="20" height="20" {...props} />;
     case "chips":
-        return <Chips  width="20" height="20" {...props} />;    
+      return <Chips width="20" height="20" {...props} />;
     case "sword":
-        return <Sword  width="20" height="20" {...props} />;    
+      return <Sword width="20" height="20" {...props} />;
+    case "close":
+      return <Close width={props.width} height={props.height} {...props} />;
   }
 };
 

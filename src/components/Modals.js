@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Icon } from "../assets/icons";
 import { Modal, Flex, Box, Text, Button, Input } from "../primitives/index";
 import theme from "../styles/theme";
 
@@ -72,6 +73,9 @@ Modal.Login = ({ handleClose }) => {
                 </Text.P_SM>
               </Flex.Row>
             </Flex.Column>
+
+            <Button.ModalClose onClick={handleClose}/>
+            
           </Modal>
       </motion.div>
     </Modal.BG>

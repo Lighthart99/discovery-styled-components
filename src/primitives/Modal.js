@@ -7,6 +7,7 @@ import { Text, Flex } from './index'
 
 
 const Modal = styled.div`
+  position: relative;
   padding: 24px;
   display: flex;
   justify-content: center;

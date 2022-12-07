@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "../assets/icons";
 import { Logo } from "../assets/logos";
 import { Box, Button, Flex } from "../primitives";
@@ -36,13 +37,18 @@ const Topbar = ({
             />
           </Box>
 
-          <Logo name="chips" />
+          <Link to="/">
+            <Logo name="chips" />
+          </Link>
         </Flex>
 
         <Flex alignItems="center" justifyContent="end" flexGrow="1">
-          <Button.IconLeft sort="secondary" size="md" iconName="games" mr={2}>
-            Sign Up
-          </Button.IconLeft>
+          <Link to="/sign-up">
+            <Button.IconLeft sort="secondary" size="md" iconName="games" mr={2}>
+              Sign Up
+            </Button.IconLeft>
+          </Link>
+
           <Button sort="primary" size="md" onClick={onClickSignIn}>
             Sign In
           </Button>

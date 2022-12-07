@@ -2,18 +2,6 @@ import styled from "styled-components";
 import { alignItems, color, fontSize, space, textAlign, width, height, Transform } from "styled-system";
 import theme from "../styles/theme";
 
-// const Size = (props) => {
-//   switch (props.size) {
-//     case "SM":
-//       return `
-//         padding: 6px 6px 8px 12px;
-//       `
-//     default:
-//       return `
-//       `
-//   }
-// }
-
 export const SidebarItem = styled.div.attrs(props => ({
   padding: props.size || "7px 8px 7px 10px;",
   height: props.height || "26px",

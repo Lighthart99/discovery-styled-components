@@ -33,7 +33,10 @@ import {
   margin,
 } from 'styled-system'
 
-const Box = styled.div`
+const Box = styled.div.attrs(props => ({
+  cursor: props.cursor || "",
+}))`
+
   box-sizing: border-box;
 
   ${zIndex}

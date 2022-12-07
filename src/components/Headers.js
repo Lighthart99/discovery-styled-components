@@ -13,7 +13,7 @@ const Headers = () => {
             </Flex.Column>
             
             {/* <Image width="100%" height="400px" src="../assets/images/homepage-header-thumbnail.png" />  */}
-            <Image width="100%" height="412px" src="https://cdn.chips.gg/images/ml_chart01.png" /> 
+            {/* <Image width="100%" height="412px" src="https://cdn.chips.gg/images/ml_chart01.png" />  */}
         </Flex.Row>
     </Header>
   )
