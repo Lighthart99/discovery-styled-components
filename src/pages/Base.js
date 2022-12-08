@@ -12,6 +12,7 @@ import {
 } from "../primitives";
 import "../styles/global.css";
 import theme from "../styles/theme";
+import { AuthContextProvider } from "../stores/authContext";
 
 export function Base({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -20,59 +21,62 @@ export function Base({ children }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <Flex flexGrow="1">
-      <AnimatePresence>
-      {modalOpen && <Modal.Login modalOpen={modalOpen} handleClose={() => setModalOpen(!modalOpen)} />}
-      </AnimatePresence>
+    <AuthContextProvider>
+      <Flex flexGrow="1">
+        <AnimatePresence>
+        {modalOpen && <Modal.Login modalOpen={modalOpen} handleClose={() => setModalOpen(!modalOpen)} />}
+        </AnimatePresence>
 
-      <motion.div
-        animate={{
-          width: isSidebarOpen ? "68px" : "224px",
-          minWidth: isSidebarOpen ? "68px" : "224px",
-          overflow: isSidebarOpen ? "hidden" : "scroll",
-        }}
-      >
-        <Sidebar
-          AnimateNavText={isSidebarOpen ? "closed" : "open"}
-          AnimateLabel={{
-            display: isSidebarOpen ? "none" : "",
+        <motion.div
+          animate={{
+            width: isSidebarOpen ? "68px" : "224px",
+            minWidth: isSidebarOpen ? "68px" : "224px",
+            maxWidth: isSidebarOpen ? "68px" : "224px", // add this because, weird flikkering
+            overflow: isSidebarOpen ? "hidden" : "scroll",
           }}
-          AnimateDropdownArrow={{
-            display: isSidebarOpen ? "none" : "",
-          }}
-          Size={isSidebarOpen ? "10px" : ""}
-          Height={isSidebarOpen ? "20px" : ""} 
-        />
-      </motion.div>
+        >
+          <Sidebar
+            AnimateNavText={isSidebarOpen ? "closed" : "open"}
+            AnimateLabel={{
+              display: isSidebarOpen ? "none" : "",
+            }}
+            AnimateDropdownArrow={{
+              display: isSidebarOpen ? "none" : "",
+            }}
+            Size={isSidebarOpen ? "10px" : ""}
+            Height={isSidebarOpen ? "20px" : ""} 
+          />
+        </motion.div>
 
-      <Flex.Column flexGrow="1" alignItems="center">
+        <Flex.Column flexGrow="1" alignItems="center">
 
-        <Topbar
-          AnimateLeft={isSidebarOpen ? "open" : "closed"}
-          onClickLeftArrow={() => setIsSidebarOpen(!isSidebarOpen)}
-          onClickSignIn={() => setModalOpen(!modalOpen)}
-          onClickRightArrow={() => setIsChatOpen(!isChatOpen)}
-          AnimateRight={isChatOpen ? "open" : "closed"}
-          
-        />
+          <Topbar
+            AnimateLeft={isSidebarOpen ? "open" : "closed"}
+            onClickLeftArrow={() => setIsSidebarOpen(!isSidebarOpen)}
+            onClickSignIn={() => setModalOpen(!modalOpen)}
+            onClickRightArrow={() => setIsChatOpen(!isChatOpen)}
+            AnimateRight={isChatOpen ? "open" : "closed"}
+            
+          />
 
-        <Container>
-         {children}
-         </Container>
-      </Flex.Column>
+          <Container>
+          {children}
+          </Container>
+        </Flex.Column>
 
-      <motion.div
-      initial={{
-        width: "320px",
-      }}
-        animate={{
-          width: isChatOpen ? "320px" : "0",
+        <motion.div
+        initial={{
+          width: "320px",
         }}
-      >
-        <Chat />
-      </motion.div>
+          animate={{
+            width: isChatOpen ? "320px" : "0",
+          }}
+        >
+          <Chat />
+        </motion.div>
 
-    </Flex>    
+      </Flex>    
+    </AuthContextProvider>
   );
 }
 
