@@ -1,8 +1,10 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../assets/icons";
 import { Logo } from "../assets/logos";
 import { Box, Button, Flex } from "../primitives";
+import AuthContext from "../stores/authContext";
 
 const Topbar = ({
   onClick_signup,
@@ -13,6 +15,9 @@ const Topbar = ({
   AnimateRight,
   AnimateModal,
 }) => {
+
+  const {user, login} = useContext(AuthContext)
+  console.log(user)
 
   const ArrowLeft = {
     open: { rotate: 180, transition: { duration: 0.2 } },
@@ -51,6 +56,10 @@ const Topbar = ({
 
           <Button sort="primary" size="md" onClick={onClickSignIn}>
             Sign In
+          </Button>
+
+          <Button ml={2} sort="primary" size="md" onClick={login}>
+            Sign In Netlify
           </Button>
           <Box ml={4}>
             <Button.TopbarArrow
