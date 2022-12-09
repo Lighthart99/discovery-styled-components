@@ -56,7 +56,7 @@ export function Base({ children }) {
             onClickSignIn={() => setModalOpen(!modalOpen)}
             onClickRightArrow={() => setIsChatOpen(!isChatOpen)}
             AnimateRight={isChatOpen ? "open" : "closed"}
-            
+            loggedIn
           />
 
           <Container>

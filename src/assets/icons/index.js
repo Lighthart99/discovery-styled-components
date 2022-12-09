@@ -21,6 +21,15 @@ import { Sword } from "./sword";
 import { Heart } from "./heart";
 import { Chips } from "./chips";
 import { Close } from "./close";
+import { Notification } from "./notification";
+
+import { BNB } from "./crypto-icons/BNB";
+import { BTC } from "./crypto-icons/BTC";
+import { BUSD } from "./crypto-icons/BUSD";
+import { ETH } from "./crypto-icons/ETH";
+import { TRX } from "./crypto-icons/TRX";
+import { USDC } from "./crypto-icons/USDC";
+import { USDT } from "./crypto-icons/USDT";
 
 const Icon = (props) => {
   // eslint-disable-next-line
@@ -64,14 +73,40 @@ const Icon = (props) => {
 
     case "chevron_right":
       return (
-        <ChevronRight className="icon" width="16" height="16" {...props} />
+        <ChevronRight
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
       );
     case "chevron_up":
-      return <ChevronUp className="icon" width="16" height="16" {...props} />;
+      return (
+        <ChevronUp
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
     case "chevron_left":
-      return <ChevronLeft className="icon" width="16" height="16" {...props} />;
+      return (
+        <ChevronLeft
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
     case "chevron_down":
-      return <ChevronDown className="icon" width="16" height="16" {...props} />;
+      return (
+        <ChevronDown
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
 
     case "anniversary":
       return <Anniversary width="20" height="20" {...props} />;
@@ -95,6 +130,77 @@ const Icon = (props) => {
       return <Sword width="20" height="20" {...props} />;
     case "close":
       return <Close width={props.width} height={props.height} {...props} />;
+    case "notification":
+      return (
+        <Notification width={props.width} height={props.height} {...props} />
+      );
+
+    // replace width/height in props
+
+
+      case "crypto_bnb":
+      return (
+        <BNB
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
+    case "crypto_btc":
+      return (
+        <BTC
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
+    case "crypto_busd":
+      return (
+        <BUSD
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
+    case "crypto_eth":
+      return (
+        <ETH
+          className="icon"
+          width={props.width}
+          height={props.height}
+          {...props}
+        />
+      );
+      case "crypto_trx":
+        return (
+          <TRX
+            className="icon"
+            width={props.width}
+            height={props.height}
+            {...props}
+          />
+        );
+        case "crypto_usdc":
+          return (
+            <USDC
+              className="icon"
+              width={props.width}
+              height={props.height}
+              {...props}
+            />
+          );
+          case "crypto_usdt":
+            return (
+              <USDT
+                className="icon"
+                width={props.width}
+                height={props.height}
+                {...props}
+              />
+            );
   }
 };
 
