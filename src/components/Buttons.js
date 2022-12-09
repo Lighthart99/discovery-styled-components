@@ -38,6 +38,24 @@ Button.IconLeft = ({
   );
 };
 
+Button.IconOnly = ({
+  sort,
+  size,
+  outline,
+  depth,
+  children,
+  iconName,
+  height,
+  width,
+  ...props
+}) => {
+  return (
+    <Button sort={sort} size={size} outline={outline} depth={depth} {...props}>
+      <Icon name={iconName} height={height} width={width} />
+    </Button>
+  );
+};
+
 Button.DropdownArrow = ({
   onClick,
   Animate,

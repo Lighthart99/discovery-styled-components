@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../assets/icons";
 import { Logo } from "../assets/logos";
-import { Box, Button, Flex } from "../primitives";
+import { Box, Button, Flex, Dropdown } from "../primitives";
 import AuthContext from "../stores/authContext";
 
 const Topbar = ({
@@ -14,10 +14,11 @@ const Topbar = ({
   AnimateLeft,
   AnimateRight,
   AnimateModal,
+  loggedIn,
+  signedOut,
 }) => {
-
-  const {user, login} = useContext(AuthContext)
-  console.log(user)
+  const { user, login } = useContext(AuthContext);
+  console.log(user);
 
   const ArrowLeft = {
     open: { rotate: 180, transition: { duration: 0.2 } },
@@ -47,29 +48,67 @@ const Topbar = ({
           </Link>
         </Flex>
 
-        <Flex alignItems="center" justifyContent="end" flexGrow="1">
-          <Link to="/sign-up">
-            <Button.IconLeft sort="secondary" size="md" iconName="games" mr={2}>
-              Sign Up
-            </Button.IconLeft>
-          </Link>
+        {signedOut && (
+          <Flex alignItems="center" justifyContent="end" flexGrow="1">
+            <Link to="/sign-up">
+              <Button.IconLeft
+                sort="secondary"
+                size="md"
+                iconName="games"
+                mr={2}
+              >
+                Sign Up
+              </Button.IconLeft>
+            </Link>
 
-          <Button sort="primary" size="md" onClick={onClickSignIn}>
-            Sign In
-          </Button>
+            <Button sort="primary" size="md" onClick={onClickSignIn}>
+              Sign In
+            </Button>
 
-          <Button ml={2} sort="primary" size="md" onClick={login}>
-            Sign In Netlify
-          </Button>
-          <Box ml={4}>
-            <Button.TopbarArrow
-              iconName="arrow_right"
-              Variants={ArrowRight}
-              Animate={AnimateRight}
-              onClick={onClickRightArrow}
+            <Button ml={2} sort="primary" size="md" onClick={login}>
+              Sign In Netlify
+            </Button>
+            <Box ml={4}>
+              <Button.TopbarArrow
+                iconName="arrow_right"
+                Variants={ArrowRight}
+                Animate={AnimateRight}
+                onClick={onClickRightArrow}
+              />
+            </Box>
+          </Flex>
+        )}
+
+        {loggedIn && (
+          <Flex alignItems="center" justifyContent="end" flexGrow="1">
+            <Link to="">
+              <Button sort="primary" size="md" mr={2}>
+                Deposit
+              </Button>
+            </Link>
+
+            <Dropdown bgColor="black800" mr={2} Placeholder="test"></Dropdown>
+
+            <Button.IconOnly
+              sort="secondary"
+              size="md-icon-only"
+              iconName="notification"
+              height="16px"
+              width="16px"
             />
-          </Box>
-        </Flex>
+
+            {/* <Dropdown bgColor="black800" Placeholder="test">test</Dropdown>  make for user dropdown component in dropdowns*/}
+
+            <Box ml={4}>
+              <Button.TopbarArrow
+                iconName="arrow_right"
+                Variants={ArrowRight}
+                Animate={AnimateRight}
+                onClick={onClickRightArrow}
+              />
+            </Box>
+          </Flex>
+        )}
       </Flex>
     </Box>
   );

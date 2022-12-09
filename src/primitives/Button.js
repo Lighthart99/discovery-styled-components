@@ -4,6 +4,8 @@ import theme from "../styles/theme";
 import propTypes from 'prop-types';
 import { Icon } from "../assets/icons/index";
 
+
+
 const sort = (props) => {
   switch (props.sort) {
     case "primary":
