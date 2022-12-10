@@ -128,7 +128,6 @@ export function Base({ children }) {
             onClickRightArrow={() => setIsChatOpen(!isChatOpen)}
             AnimateRight={isChatOpen ? "open" : "closed"}
             loggedIn
-            onChange={() => this.handleButtonStateChange('isSidebarOpen')}
           />
 
           <Container>{children}</Container>
