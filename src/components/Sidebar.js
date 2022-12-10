@@ -13,11 +13,22 @@ const Sidebar = ({
   AnimateDropdownArrow,
   Size,
   Height,
+  AnimateDropdown1,
+  AnimateDropdownMenu1,
+  AnimateDropdown2,
+  AnimateDropdownMenu2,
+  AnimateDropdown3,
+  AnimateDropdownMenu3,
+  onClickDropdown1,
+  onClickDropdown2,
+  onClickDropdown3,
+  ColorNavItem1,
+  ColorNavItem2,
+  ColorNavItem3,
+  BackgroundColorNavItem1,
+  BackgroundColorNavItem2,
+  BackgroundColorNavItem3,
 }) => {
-  // 3 dropdown menus
-  const [isOpen, setIsOpen] = useState(false);
-  const [isOpen2, setIsOpen2] = useState(false);
-  const [isOpen3, setIsOpen3] = useState(false);
 
   return (
     <Box
@@ -32,28 +43,23 @@ const Sidebar = ({
           iconName="games"
           Label="Casino"
           Dropdown
-          Animate={isOpen ? "open" : "closed"}
-          onClick={() => setIsOpen(!isOpen)}
+          Animate={AnimateDropdown1}
+          onClick={onClickDropdown1}
           AnimateLabel={AnimateLabel}
           AnimateDropdownArrow={AnimateDropdownArrow}
           Size={Size}
           Height={Height}
-          Color={isOpen ? "#fff" : ""} // ask jacob how to attach this to design system
-          backgroundColor={isOpen ? "#26303C" : ""} // ask jacob how to attach this to design system
+          Color={ColorNavItem1}
+          backgroundColor={BackgroundColorNavItem1} 
         />
       </motion.div>
       <motion.div
-        // animate={isOpen ? "open" : "closed"}
-        // variants={menuDropdown}
         initial={{
           height: 0,
           opacity: 0,
           overflow: "hidden",
         }}
-        animate={{
-          height: isOpen ? "auto" : 0,
-          opacity: isOpen ? 1 : 0,
-        }}
+        animate={AnimateDropdownMenu1}
       >
         <Flex flexGrow="1">
           <div className="sidebar-divider">
@@ -75,14 +81,14 @@ const Sidebar = ({
         iconName="sports"
         Label="Sports"
         Dropdown
-        Animate={isOpen2 ? "open" : "closed"}
-        onClick={() => setIsOpen2(!isOpen2)}
+        Animate={AnimateDropdown2}
+        onClick={onClickDropdown2}
         AnimateLabel={AnimateLabel}
         AnimateDropdownArrow={AnimateDropdownArrow}
         Size={Size}
         Height={Height}
-        Color={isOpen2 ? "#fff" : ""} // ask jacob how to attach this to design system
-        backgroundColor={isOpen2 ? "#26303C" : ""} // ask jacob how to attach this to design system
+        Color={ColorNavItem2}
+        backgroundColor={BackgroundColorNavItem2}
       />
       <motion.div
         initial={{
@@ -90,10 +96,7 @@ const Sidebar = ({
           opacity: 0,
           overflow: "hidden",
         }}
-        animate={{
-          height: isOpen2 ? "auto" : 0,
-          opacity: isOpen2 ? 1 : 0,
-        }}
+        animate={AnimateDropdownMenu2}
       >
         <Flex flexGrow="1">
           <div className="sidebar-divider">
@@ -136,14 +139,14 @@ const Sidebar = ({
         iconName="promotion"
         Label="Promotion"
         Dropdown
-        Animate={isOpen3 ? "open" : "closed"}
-        onClick={() => setIsOpen3(!isOpen3)}
+        Animate={AnimateDropdown3}
+        onClick={onClickDropdown3}
         AnimateLabel={AnimateLabel}
         AnimateDropdownArrow={AnimateDropdownArrow}
         Size={Size}
         Height={Height}
-        Color={isOpen3 ? "#fff" : ""} // ask jacob how to attach this to design system
-        backgroundColor={isOpen3 ? "#26303C" : ""} // ask jacob how to attach this to design system
+        Color={ColorNavItem3}
+        backgroundColor={BackgroundColorNavItem3}
       />
       <motion.div
         initial={{
@@ -151,10 +154,7 @@ const Sidebar = ({
           opacity: 0,
           overflow: "hidden",
         }}
-        animate={{
-          height: isOpen3 ? "auto" : 0,
-          opacity: isOpen3 ? 1 : 0,
-        }}
+        animate={AnimateDropdownMenu3}
       >
         <Flex flexGrow="1">
           <div className="sidebar-divider">
