@@ -1,11 +1,6 @@
-import React, { useState } from "react";
-import { NavItem } from "./index";
 import "../styles/global.css";
-import { Box, Divider, Flex, Input } from "../primitives/index";
-import { motion } from "framer-motion";
+import { Box, Input } from "../primitives/index";
 import theme from "../styles/theme";
-import { Button } from "./index";
-import { Icon } from "../assets/icons";
 
 const Chat = ({}) => {
 
