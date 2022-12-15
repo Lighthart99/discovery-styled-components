@@ -73,3 +73,28 @@ svg {
 a {
   text-decoration: none;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 24px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #181C24;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2E3947;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #44566B;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+}

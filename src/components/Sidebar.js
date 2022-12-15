@@ -32,7 +32,7 @@ const Sidebar = ({
 
   return (
     <Box
-      overflow="scroll"
+      overflow="auto"
       padding="14px"
       height="100vh"
       maxHeight="100vh"

@@ -72,7 +72,7 @@ export function Base({ children }) {
             width: isSidebarOpen ? "68px" : "224px",
             minWidth: isSidebarOpen ? "68px" : "224px",
             maxWidth: isSidebarOpen ? "68px" : "224px", // added this because, weird flikkering
-            overflow: isSidebarOpen ? "hidden" : "scroll",
+            overflow: isSidebarOpen ? "hidden" : "auto",
           }}
         >
           <Sidebar

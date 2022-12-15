@@ -87,7 +87,7 @@ const Topbar = ({
               </Button>
             </Link>
 
-            <Dropdown bgColor="black800" mr={2} Placeholder="test"></Dropdown>
+            <Dropdown.Wallet bgColor="black800" mr={2} Placeholder="test"/>
 
             <Button.IconOnly
               sort="secondary"

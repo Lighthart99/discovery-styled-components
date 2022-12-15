@@ -101,11 +101,12 @@ const Dropdown = ({dropdownLabel, Placeholder, Label, HintText, bgColor, childre
         bgColor={bgColor}
         {...props}
       >
-        <StyledOption value={value} flexGrow="1">{Placeholder}</StyledOption>
         {children}
-
-        {/* <Icon name="chevron_down" height="16px" width="16px"></Icon> */}
       </StyledDropdown>
+
+
+      {/* https://stackoverflow.com/questions/40310472/select-input-with-custom-icon */}
+      {/* https://www.sitepoint.com/css3-transform-background-image/ */}
 
       <Flex.Row>
         <Text.Heading_XXS color={theme.colors.white} flexGrow="1">

@@ -34,9 +34,9 @@ export const StyledOption = styled.option`
 const Option = ({children, value, iconName}) => {
   return (
     <StyledOption value={value}>
-      {Icon && (
+      {/* {Icon && (
         <Icon name={iconName}></Icon>
-      )}
+      )} */}
       {children}
 
       <Icon name="chevron_down"></Icon>
