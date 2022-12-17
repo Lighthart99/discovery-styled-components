@@ -17,6 +17,7 @@ const Topbar = ({
   loggedIn,
   signedOut,
 }) => {
+  
   const { user, login } = useContext(AuthContext);
   console.log(user);
 

@@ -14,11 +14,8 @@ import "../styles/global.css";
 import theme from "../styles/theme";
 import { AuthContextProvider } from "../stores/authContext";
 
-
 export function Base({ children }) {
-
   const [isChatOpen, setIsChatOpen] = useState(true);
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   // 3 dropdown menus
@@ -46,14 +43,6 @@ export function Base({ children }) {
   useEffect(() => {
     window.localStorage.setItem("CHAT", JSON.stringify(isChatOpen));
   }, [isChatOpen]);
-
-//   const handleButtonStateChange = (toggleKey) => {
-//     const isSidebarOpen = {...this.state};
-//     const setIsOpen = !isSidebarOpen[isSidebarOpen];
-//     Object.keys(isSidebarOpen).forEach(key => isSidebarOpen[key] = false);
-//     isSidebarOpen[isSidebarOpen] = setIsOpen;
-//     this.setState(isSidebarOpen);
-// }
 
   return (
     <AuthContextProvider>
@@ -85,8 +74,7 @@ export function Base({ children }) {
               display: isSidebarOpen ? "none" : "",
             }}
             Size={isSidebarOpen ? "10px" : ""}
-            Height={isSidebarOpen ? "20px" : ""}          
-            
+            Height={isSidebarOpen ? "20px" : ""}
             // Dropdown 1
             AnimateDropdown1={isOpen ? "open" : "closed"}
             onClickDropdown1={() => setIsOpen(!isOpen)}
@@ -96,7 +84,6 @@ export function Base({ children }) {
               height: isOpen ? "auto" : 0,
               opacity: isOpen ? 1 : 0,
             }}
-            
             // Dropdown 2
             AnimateDropdown2={isOpen2 ? "open" : "closed"}
             onClickDropdown2={() => setIsOpen2(!isOpen2)}
@@ -106,8 +93,6 @@ export function Base({ children }) {
               height: isOpen2 ? "auto" : 0,
               opacity: isOpen2 ? 1 : 0,
             }}
-
-
             // Dropdown 3
             AnimateDropdown3={isOpen3 ? "open" : "closed"}
             onClickDropdown3={() => setIsOpen3(!isOpen3)}
@@ -127,7 +112,7 @@ export function Base({ children }) {
             onClickSignIn={() => setModalOpen(!modalOpen)}
             onClickRightArrow={() => setIsChatOpen(!isChatOpen)}
             AnimateRight={isChatOpen ? "open" : "closed"}
-            loggedIn
+            signedOut
           />
 
           <Container>{children}</Container>
