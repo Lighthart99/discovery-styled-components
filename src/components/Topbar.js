@@ -17,8 +17,7 @@ const Topbar = ({
   loggedIn,
   signedOut,
 }) => {
-  
-  const { user, login } = useContext(AuthContext);
+  const { user, login, logout } = useContext(AuthContext);
   console.log(user);
 
   const ArrowLeft = {
@@ -49,7 +48,7 @@ const Topbar = ({
           </Link>
         </Flex>
 
-        {signedOut && (
+        {!user && 
           <Flex alignItems="center" justifyContent="end" flexGrow="1">
             <Link to="/sign-up">
               <Button.IconLeft
@@ -62,13 +61,14 @@ const Topbar = ({
               </Button.IconLeft>
             </Link>
 
-            <Button sort="primary" size="md" onClick={onClickSignIn}>
+            {/* <Button sort="primary" size="md" onClick={onClickSignIn}>
               Sign In
-            </Button>
+            </Button> */}
 
             <Button ml={2} sort="primary" size="md" onClick={login}>
               Sign In Netlify
             </Button>
+
             <Box ml={4}>
               <Button.TopbarArrow
                 iconName="arrow_right"
@@ -77,10 +77,9 @@ const Topbar = ({
                 onClick={onClickRightArrow}
               />
             </Box>
-          </Flex>
-        )}
+          </Flex>}
 
-        {loggedIn && (
+        {user && 
           <Flex alignItems="center" justifyContent="end" flexGrow="1">
             <Link to="">
               <Button sort="primary" size="md" mr={2}>
@@ -88,7 +87,7 @@ const Topbar = ({
               </Button>
             </Link>
 
-            <Dropdown.Wallet bgColor="black800" mr={2} Placeholder="test"/>
+            <Dropdown.Wallet bgColor="black800" mr={2} Placeholder="test" />
 
             <Button.IconOnly
               sort="secondary"
@@ -96,7 +95,12 @@ const Topbar = ({
               iconName="notification"
               height="16px"
               width="16px"
+              mr={2}
             />
+
+            <Button sort="secondary" size="md" onClick={logout}>
+              Log out
+            </Button>
 
             {/* <Dropdown bgColor="black800" Placeholder="test">test</Dropdown>  make for user dropdown component in dropdowns*/}
 
@@ -108,8 +112,8 @@ const Topbar = ({
                 onClick={onClickRightArrow}
               />
             </Box>
-          </Flex>
-        )}
+          </Flex>}
+
       </Flex>
     </Box>
   );
