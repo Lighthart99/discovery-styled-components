@@ -17,7 +17,7 @@ const Topbar = ({
   loggedIn,
   signedOut,
 }) => {
-  const { user, login, logout } = useContext(AuthContext);
+  const { user, login, logout, authReady } = useContext(AuthContext);
   console.log(user);
 
   const ArrowLeft = {
@@ -47,6 +47,9 @@ const Topbar = ({
             <Logo name="chips" />
           </Link>
         </Flex>
+
+        {authReady && (
+        <Flex>
 
         {!user && 
           <Flex alignItems="center" justifyContent="end" flexGrow="1">
@@ -113,7 +116,7 @@ const Topbar = ({
               />
             </Box>
           </Flex>}
-
+          </Flex>)}
       </Flex>
     </Box>
   );
