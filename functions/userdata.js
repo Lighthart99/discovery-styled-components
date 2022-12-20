@@ -4,7 +4,7 @@ exports.handler = async () => {
     const data = {name: 'Robert', age: '69', job: 'chappie'}
 
     return {
-        status: 200,
+        statusCode: 200,
         body: JSON.stringify(data)
     }
 }
