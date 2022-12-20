@@ -47,76 +47,77 @@ const Topbar = ({
             <Logo name="chips" />
           </Link>
         </Flex>
-
         {authReady && (
-        <Flex>
+          <Flex>
+            {!user && (
+              <Flex alignItems="center" justifyContent="end" flexGrow="1">
+                <Link to="/sign-up">
+                  <Button.IconLeft
+                    sort="secondary"
+                    size="md"
+                    iconName="games"
+                    mr={2}
+                  >
+                    Sign Up
+                  </Button.IconLeft>
+                </Link>
 
-        {!user && 
-          <Flex alignItems="center" justifyContent="end" flexGrow="1">
-            <Link to="/sign-up">
-              <Button.IconLeft
-                sort="secondary"
-                size="md"
-                iconName="games"
-                mr={2}
-              >
-                Sign Up
-              </Button.IconLeft>
-            </Link>
-
-            {/* <Button sort="primary" size="md" onClick={onClickSignIn}>
+                {/* <Button sort="primary" size="md" onClick={onClickSignIn}>
               Sign In
             </Button> */}
 
-            <Button ml={2} sort="primary" size="md" onClick={login}>
-              Sign In Netlify
-            </Button>
+                <Button ml={2} sort="primary" size="md" onClick={login}>
+                  Sign In Netlify
+                </Button>
 
-            <Box ml={4}>
-              <Button.TopbarArrow
-                iconName="arrow_right"
-                Variants={ArrowRight}
-                Animate={AnimateRight}
-                onClick={onClickRightArrow}
-              />
-            </Box>
-          </Flex>}
+                <Box ml={4}>
+                  <Button.TopbarArrow
+                    iconName="arrow_right"
+                    Variants={ArrowRight}
+                    Animate={AnimateRight}
+                    onClick={onClickRightArrow}
+                  />
+                </Box>
+              </Flex>
+            )}
 
-        {user && 
-          <Flex alignItems="center" justifyContent="end" flexGrow="1">
-            <Link to="">
-              <Button sort="primary" size="md" mr={2}>
-                Deposit
-              </Button>
-            </Link>
+            {user && (
+              <Flex alignItems="center" justifyContent="end" flexGrow="1">
+                <Link to="">
+                  <Button sort="primary" size="md" mr={2}>
+                    Deposit
+                  </Button>
+                </Link>
 
-            <Dropdown.Wallet bgColor="black800" mr={2} Placeholder="test" />
+                <Dropdown.Wallet bgColor="black800" mr={2} Placeholder="test" />
 
-            <Button.IconOnly
-              sort="secondary"
-              size="md-icon-only"
-              iconName="notification"
-              height="16px"
-              width="16px"
-              mr={2}
-            />
+                <Button.IconOnly
+                  sort="secondary"
+                  size="md-icon-only"
+                  iconName="notification"
+                  height="16px"
+                  width="16px"
+                  mr={2}
+                />
 
-            <Button sort="secondary" size="md" onClick={logout}>
-              Log out
-            </Button>
+                <Button sort="secondary" size="md" onClick={logout}>
+                  Log out
+                </Button>
 
-            {/* <Dropdown bgColor="black800" Placeholder="test">test</Dropdown>  make for user dropdown component in dropdowns*/}
+                {/* <Dropdown bgColor="black800" Placeholder="test">test</Dropdown>  make for user dropdown component in dropdowns*/}
 
-            <Box ml={4}>
-              <Button.TopbarArrow
-                iconName="arrow_right"
-                Variants={ArrowRight}
-                Animate={AnimateRight}
-                onClick={onClickRightArrow}
-              />
-            </Box>
-          </Flex>}
-          </Flex>)}
+                <Box ml={4}>
+                  <Button.TopbarArrow
+                    iconName="arrow_right"
+                    Variants={ArrowRight}
+                    Animate={AnimateRight}
+                    onClick={onClickRightArrow}
+                  />
+                </Box>
+              </Flex>
+            )}
+          </Flex>
+        )}
       </Flex>
     </Box>
   );
