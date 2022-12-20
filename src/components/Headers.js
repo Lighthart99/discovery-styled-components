@@ -12,7 +12,7 @@ const Headers = () => {
         <Flex.Row>
             <Flex.Column p={5} alignItems="flex-start">
                 {!user && <Text.Heading_LG>Welcome to The Future of Cryptocurrency Gambling!</Text.Heading_LG>}
-                {user && <Text.Heading_LG>Welcome {user.user_metadata.full_name}</Text.Heading_LG>}
+                {user && <Text.Heading_LG>Let's get started, {user.user_metadata.full_name}</Text.Heading_LG>}
                 <Text.P_SM textColor={theme.colors.white_400}>Providing the most premier online casino experience through the most exciting and expansive selection of online casino games available, combined with a never seen before reward system!</Text.P_SM>
             </Flex.Column>
             
