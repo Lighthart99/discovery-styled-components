@@ -28,11 +28,13 @@ Button.IconLeft = ({
   depth,
   children,
   iconName,
+  width,
+  height,
   ...props
 }) => {
   return (
     <Button sort={sort} size={size} outline={outline} depth={depth} {...props}>
-      <Icon name={iconName} />
+      <Icon name={iconName} width={width} height={height} />
       <Box ml={2}>{children}</Box>
     </Button>
   );
@@ -47,11 +49,19 @@ Button.IconOnly = ({
   iconName,
   height,
   width,
+  onCLick,
+  Animate,
   ...props
 }) => {
+  const ArrowRotate = {
+    open: { rotate: 90, transition: { duration: 0.2 } },
+    closed: { rotate: 0, transition: { duration: 0.2 } },
+  };
   return (
-    <Button sort={sort} size={size} outline={outline} depth={depth} {...props}>
-      <Icon name={iconName} height={height} width={width} />
+    <Button sort={sort} size={size} outline={outline} depth={depth} onClick={onCLick} {...props}>
+      <motion.div animate={Animate} variants={ArrowRotate}>
+        <Icon name={iconName} height={height} width={width} />
+      </motion.div>
     </Button>
   );
 };

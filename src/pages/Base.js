@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { overflow } from "styled-system";
 import { Sidebar, Topbar, Chat } from "../components/index";
 import {
@@ -12,9 +12,25 @@ import {
 } from "../primitives";
 import "../styles/global.css";
 import theme from "../styles/theme";
-import { AuthContextProvider } from "../stores/authContext";
+import AuthContext, { AuthContextProvider } from "../stores/authContext";
 
 export function Base({ children }) {
+  const { user, authReady } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (authReady) {
+      fetch("/.netlify/functions/guides", user && {
+        headers: {
+          Authorization: 'Bearer' + user.token.access_token
+        }
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    }
+  }, [user, authReady]);
+
+  //https://www.youtube.com/watch?v=wizwky_4YTs&list=PL4cUxeGkcC9ig-veuRaLI4QB0Ws8xMzjv&index=10&ab_channel=TheNetNinja doesn't get errors back like i menntioned, but seems like working. (previous tut)
+
   const [isChatOpen, setIsChatOpen] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -58,13 +74,20 @@ export function Base({ children }) {
 
         <motion.div
           animate={{
+            position: "sticky",
+            top: 0,
+            left: 0,
+            height: "100%",
             width: isSidebarOpen ? "68px" : "224px",
             minWidth: isSidebarOpen ? "68px" : "224px",
             maxWidth: isSidebarOpen ? "68px" : "224px", // added this because, weird flikkering
             overflow: isSidebarOpen ? "hidden" : "auto",
           }}
         >
+          {/* // fix sidebar collapse, after fixed position it fucked it up */}
           <Sidebar
+            width={isSidebarOpen ? "68px" : "224px"}
+            justifyContent={isSidebarOpen ? "center" : "flex-start"}
             // Sidebar
             AnimateNavText={isSidebarOpen ? "closed" : "open"}
             AnimateLabel={{
@@ -105,7 +128,7 @@ export function Base({ children }) {
           />
         </motion.div>
 
-        <Flex.Column flexGrow="1" alignItems="center">
+        <Flex.Column flexGrow="1">
           <Topbar
             AnimateLeft={isSidebarOpen ? "open" : "closed"}
             onClickLeftArrow={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -115,7 +138,9 @@ export function Base({ children }) {
             signedOut
           />
 
-          <Container>{children}</Container>
+          <Container>
+            {children}
+            </Container>
         </Flex.Column>
 
         <motion.div

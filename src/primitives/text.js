@@ -70,12 +70,97 @@ Text.Heading_MD = ({ children, textColor, ...props }) => {
   );
 };
 
+Text.Heading_XS = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="poppins-bold"
+      fontSize="16px"
+      line-height="24px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+Text.Heading_XXS = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="poppins-bold"
+      fontSize="14px"
+      line-height="20px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+Text.Heading_XXS_Medium = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="poppins-medium"
+      fontSize="14px"
+      line-height="20px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+
+Text.P_MD = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="inter-regular"
+      fontSize="16px"
+      lineHeight="28px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
 Text.P_SM = ({ children, textColor, ...props }) => {
   return (
     <Text
       fontFamily="inter-regular"
       fontSize="14px"
       lineHeight="24px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+Text.P_SM_Medium = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="inter-medium"
+      fontSize="14px"
+      lineHeight="24px"
+      color={textColor}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
+Text.P_XS = ({ children, textColor, ...props }) => {
+  return (
+    <Text
+      fontFamily="inter-regular"
+      fontSize="12px"
+      lineHeight="20px"
       color={textColor}
       {...props}
     >

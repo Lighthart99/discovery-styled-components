@@ -31,6 +31,9 @@ import {
   display,
   overflow,
   margin,
+  flexbox,
+  flexDirection,
+  background,
 } from 'styled-system'
 
 const Box = styled.div.attrs(props => ({
@@ -70,6 +73,9 @@ const Box = styled.div.attrs(props => ({
   ${display}
   ${overflow}
   ${margin}
+  ${flexbox}
+  ${flexDirection}
+  ${background}
 `
 
 Box.displayName = 'Box'

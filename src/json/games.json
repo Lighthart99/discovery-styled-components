@@ -1,0 +1,132 @@
+{
+    "id": 1,
+    "title": "Candy Dreams",
+    "provider": "GameArt",
+    "slug": "/candy-dreams",
+    "thumbnail": "../assets/images/casino-thumbnail/candy-dreams.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+{
+    "id": 2,
+    "title": "Elemento",
+    "provider": "Fantasma Games",
+    "slug": "/elemento",
+    "thumbnail": "../assets/images/casino-thumbnail/elemento.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+{
+    "id": 3,
+    "title": "Five Princesses",
+    "provider": "GameArt",
+    "slug": "/five-princesses",
+    "thumbnail": "../assets/images/casino-thumbnail/five-princesses.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+
+{
+    "id": 4,
+    "title": "Gates of Olympus",
+    "provider": "GameArt",
+    "slug": "/gates-of-olympus",
+    "thumbnail": "../assets/images/casino-thumbnail/gates-of-olympus.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+
+{
+    "id": 5,
+    "title": "Primal Hunt",
+    "provider": "Hacksaw Gaming",
+    "slug": "/primal-hunt",
+    "thumbnail": "../assets/images/casino-thumbnail/primal-hunt.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+
+{
+    "id": 6,
+    "title": "Starlight Princess",
+    "provider": "Hacksaw Gaming",
+    "slug": "/starlight-princess",
+    "thumbnail": "../assets/images/casino-thumbnail/starlight-princess.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+
+{
+    "id": 7,
+    "title": "Sweet Bonanza",
+    "provider": "AvatarUX",
+    "slug": "/sweet-bonanza",
+    "thumbnail": "../assets/images/casino-thumbnail/candy-dreams.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}
+
+
+{
+    "id": 8,
+    "title": "The Dog House",
+    "provider": "Hacksaw Gaming",
+    "slug": "/the-dog-house",
+    "thumbnail": "../assets/images/casino-thumbnail/the-dog-house-megaways.png",
+    "tags": [
+        {
+        "category1": "category1",
+        "category2": "category2",
+        "category3": "category3",
+        "category4": "category4"
+        }
+    ]
+}

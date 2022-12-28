@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-router-dom";
 import { Icon } from "../assets/icons/index";
 import { Text, SidebarItem, Button, Flex } from "../primitives/index";
 
@@ -17,6 +18,8 @@ const NavItem = ({
   backgroundColor,
   Color,
   ButtonBackgroundColor,
+  justifyContent,
+  linkTo,
 }) => {
   const HideNavItems = {
     open: { scale: 0, transition: { duration: 0.2 } },
@@ -24,23 +27,36 @@ const NavItem = ({
   };
 
   return (
-    <SidebarItem alignItems="center" size={Size} height={Height} backgroundColor={backgroundColor} color={Color}>
-      <Flex flexGrow="1" height="20px">
-        <Icon name={iconName} />
+    <SidebarItem
+      alignItems="center"
+      size={Size}
+      height={Height}
+      backgroundColor={backgroundColor}
+      color={Color}
+
+    >
+      {/* <Link to={linkTo}> */}
+      <Flex flexGrow="1" height="20px" alignItems="center" justifyContent={justifyContent}>
+        <Icon name={iconName} width="18px" height="18px" />
         <motion.div animate={AnimateLabel}>
-          <Text.Heading_XXS
+          <Text.Heading_XXS_Medium
             ml={2}
             animate={animateText}
             variants={HideNavItems}
           >
             {Label}
-          </Text.Heading_XXS>
+          </Text.Heading_XXS_Medium>
         </motion.div>
       </Flex>
+      {/* </Link> */}
 
       {Dropdown && (
         <motion.div animate={AnimateDropdownArrow}>
-          <Button.DropdownArrow Animate={Animate} onClick={onClick} ButtonBackgroundColor={ButtonBackgroundColor} />
+          <Button.DropdownArrow
+            Animate={Animate}
+            onClick={onClick}
+            ButtonBackgroundColor={ButtonBackgroundColor}
+          />
         </motion.div>
       )}
     </SidebarItem>

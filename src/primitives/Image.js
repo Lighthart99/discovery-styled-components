@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import styled from 'styled-components'
+import styled from "styled-components";
 import {
   width,
   height,
   backgroundPosition,
   backgroundImage,
   backgroundSize,
-} from 'styled-system'
-
-import Box from './Box'
+  margin,
+  borderRadius,
+  overflow,
+} from "styled-system";
 
 // const type = props => {
 //   switch (props.type) {
@@ -22,8 +23,7 @@ import Box from './Box'
 //       `
 //   }
 // }
-
-const Img = styled.div`
+const StyledImage = styled.img`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -33,16 +33,21 @@ const Img = styled.div`
   ${backgroundSize}
   ${height}
   ${width}
+  ${margin}
+  ${borderRadius}
+  ${overflow}
 `
 
-const Image = ({ children, ...props }) => {
-  return (
-    <Img {...props} backgroundImage={`url(${props.src})`}>
-      {children}
-    </Img>
-  )
-}
+const Image = ({ children, ...props }) => (
+  <StyledImage {...props} backgroundImage={`url(${props.src})`}>
+    {children}
+  </StyledImage>
+)
 
 Image.displayName = 'Image'
+
+Image.defaultProps = {
+  borderRadius: 'normal',
+}
 
 export default Image

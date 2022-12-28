@@ -86,7 +86,7 @@ const StyledInput = styled.input`
 
 const Input = ({ Label, Placeholder, HintText, Password, bgColor }) => {
   return (
-    <Flex.Column mb={3}>
+    <Flex.Column>
       <Text.Heading_XXS color={theme.colors.white} mb={1}>
         {Label}
       </Text.Heading_XXS>

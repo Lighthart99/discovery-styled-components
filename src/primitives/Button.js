@@ -65,7 +65,8 @@ const size = (props) => {
         `  
     case "xs":
       return `
-        padding: 7px 7px;
+        padding: 6px 6px;
+        border-radius: 6px;
       `
   }
 }

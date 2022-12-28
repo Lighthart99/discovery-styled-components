@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import theme from "../styles/theme";
 import { Button } from "../components/index";
 import { Icon } from "../assets/icons";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({
   AnimateNavText,
@@ -28,30 +29,35 @@ const Sidebar = ({
   BackgroundColorNavItem1,
   BackgroundColorNavItem2,
   BackgroundColorNavItem3,
+  justifyContent,
+  width,
+  animateSidebar,
+  initialSidebar,
 }) => {
-
   return (
+
     <Box
-      overflow="auto"
       padding="14px"
       height="100vh"
       maxHeight="100vh"
       backgroundColor={theme.colors.black_700}
     >
       <motion.div animateText={AnimateNavText}>
-        <NavItem
-          iconName="games"
-          Label="Casino"
-          Dropdown
-          Animate={AnimateDropdown1}
-          onClick={onClickDropdown1}
-          AnimateLabel={AnimateLabel}
-          AnimateDropdownArrow={AnimateDropdownArrow}
-          Size={Size}
-          Height={Height}
-          Color={ColorNavItem1}
-          backgroundColor={BackgroundColorNavItem1} 
-        />
+          <NavItem
+            iconName="games"
+            Label="Casino"
+            Dropdown
+            Animate={AnimateDropdown1}
+            onClick={onClickDropdown1}
+            AnimateLabel={AnimateLabel}
+            AnimateDropdownArrow={AnimateDropdownArrow}
+            Size={Size}
+            Height={Height}
+            Color={ColorNavItem1}
+            backgroundColor={BackgroundColorNavItem1}
+            justifyContent={justifyContent}
+            linkTo="/casino"
+          />
       </motion.div>
       <motion.div
         initial={{
@@ -89,6 +95,7 @@ const Sidebar = ({
         Height={Height}
         Color={ColorNavItem2}
         backgroundColor={BackgroundColorNavItem2}
+        justifyContent={justifyContent}
       />
       <motion.div
         initial={{
@@ -104,19 +111,69 @@ const Sidebar = ({
           </div>
           <Flex.Column flexGrow="1">
             <NavItem iconName="heart" Label="My Bets" />
-            <NavItem iconName="heart" Label="Favorites" />
-            <NavItem iconName="heart" Label="Live" />
-            <NavItem iconName="heart" Label="American Football" />
-            <NavItem iconName="heart" Label="Baseball" />
-            <NavItem iconName="heart" Label="Basketball" />
-            <NavItem iconName="heart" Label="Boxing" />
-            <NavItem iconName="heart" Label="Esports" />
-            <NavItem iconName="heart" Label="FIFA" />
-            <NavItem iconName="heart" Label="Floorball" />
-            <NavItem iconName="heart" Label="Futsal" />
-            <NavItem iconName="heart" Label="Golf" />
-            <NavItem iconName="heart" Label="Handball" />
-            <NavItem iconName="heart" Label="Ice Hockey" />
+            <NavItem
+              iconName="heart"
+              Label="Favorites"
+              height="16px"
+              width="16px"
+            />
+            <NavItem iconName="heart" Label="Live" height="16px" width="16px" />
+            <NavItem
+              iconName="heart"
+              Label="American Football"
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Baseball"
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Basketball"
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Boxing"
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Esports"
+              height="16px"
+              width="16px"
+            />
+            <NavItem iconName="heart" Label="FIFA" height="16px" width="16px" />
+            <NavItem
+              iconName="heart"
+              Label="Floorball"
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Futsal"
+              height="16px"
+              width="16px"
+            />
+            <NavItem iconName="heart" Label="Golf" height="16px" width="16px" />
+            <NavItem
+              iconName="heart"
+              Label="Handball"
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Ice Hockey"
+              height="16px"
+              width="16px"
+            />
           </Flex.Column>
         </Flex>
       </motion.div>
@@ -127,6 +184,7 @@ const Sidebar = ({
         AnimateLabel={AnimateLabel}
         Size={Size}
         Height={Height}
+        justifyContent={justifyContent}
       />
       <NavItem
         iconName="vault"
@@ -134,6 +192,7 @@ const Sidebar = ({
         AnimateLabel={AnimateLabel}
         Size={Size}
         Height={Height}
+        justifyContent={justifyContent}
       />
       <NavItem
         iconName="promotion"
@@ -147,6 +206,7 @@ const Sidebar = ({
         Height={Height}
         Color={ColorNavItem3}
         backgroundColor={BackgroundColorNavItem3}
+        justifyContent={justifyContent}
       />
       <motion.div
         initial={{
@@ -161,14 +221,54 @@ const Sidebar = ({
             <Divider direction="vertical" />
           </div>
           <Flex.Column flexGrow="1">
-            <NavItem iconName="heart" Label="$100,000 Anniv..." />
-            <NavItem iconName="heart" Label="Las Vegas Anni..." />
-            <NavItem iconName="heart" Label="$10,000 Hacks..." />
-            <NavItem iconName="heart" Label="730x Closest M..." />
-            <NavItem iconName="heart" Label="$2000 Points R..." />
-            <NavItem iconName="heart" Label="$1000 Daily Wa..." />
-            <NavItem iconName="heart" Label="$1000 Daily Wa..." />
-            <NavItem iconName="heart" Label="Beat Viktor Mul..." />
+            <NavItem
+              iconName="heart"
+              Label="$100,000 Anniv..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Las Vegas Anni..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="$10,000 Hacks..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="730x Closest M..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="$2000 Points R..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="$1000 Daily Wa..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="$1000 Daily Wa..."
+              height="16px"
+              width="16px"
+            />
+            <NavItem
+              iconName="heart"
+              Label="Beat Viktor Mul..."
+              height="16px"
+              width="16px"
+            />
           </Flex.Column>
         </Flex>
       </motion.div>
@@ -179,6 +279,7 @@ const Sidebar = ({
         AnimateLabel={AnimateLabel}
         Size={Size}
         Height={Height}
+        justifyContent={justifyContent}
       />
       <NavItem
         iconName="anniversary"
@@ -186,8 +287,10 @@ const Sidebar = ({
         AnimateLabel={AnimateLabel}
         Size={Size}
         Height={Height}
+        justifyContent={justifyContent}
       />
     </Box>
+
   );
 };
 

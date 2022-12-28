@@ -7,6 +7,7 @@ export const Vault = ({ className, width, height }) => {
       width={width}
       height={height}
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
     >
       <g clipPath="url(#clip0_1245_59771)">
         <path

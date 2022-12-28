@@ -1,10 +1,11 @@
 import styled from "styled-components";
-import { alignItems, color, fontSize, space, textAlign, width, height, Transform } from "styled-system";
+import { alignItems, color, fontSize, space, textAlign, width, height, Transform, justifyContent } from "styled-system";
 import theme from "../styles/theme";
 
 export const SidebarItem = styled.div.attrs(props => ({
   padding: props.size || "7px 8px 7px 10px;",
   height: props.height || "26px",
+  justifyContent: props.justifyContent || "flex-start",
 }))`
 
   height: ${props => props.height};
@@ -15,6 +16,7 @@ export const SidebarItem = styled.div.attrs(props => ({
   margin-bottom: 8px;
   cursor: pointer;
   transition: all 0.1s ease-out;
+  justify-content: ${props => props.justifyContent}
 
   background-color: ${theme.colors.black_700};
   border-radius: 8px;
@@ -40,6 +42,7 @@ export const SidebarItem = styled.div.attrs(props => ({
   ${fontSize}
   ${alignItems}
   ${height}
+  ${justifyContent}
 `
 
 export default SidebarItem

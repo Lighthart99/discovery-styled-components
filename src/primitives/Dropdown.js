@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import theme from "../styles/theme";
-import { Text, Flex } from "./index";
-import { space, flexbox } from "styled-system";
+import { Text, Flex, DropdownMenu } from "./index";
+import { space, flexbox, width } from "styled-system";
 import { Icon } from "../assets/icons/index";
-import { StyledOption } from "./Option";
+import { Button } from "./index";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const bgColor = (props) => {
   switch (props.bgColor) {
@@ -51,17 +53,24 @@ const bgColor = (props) => {
   }
 };
 
-const StyledDropdown = styled.select`
+const StyledDropdown = styled.ul`
   color: ${theme.colors.white};
   background-color: ${theme.colors.black_400}};
   border-radius: 8px;
   border: none;
   transition: 0.2s;
-  padding: 9px 14px;
-  appearance:none;
+  padding: 8px 8px 8px 14px;
+  appearance: none;
   outline:0;
   font-size: 14px;
   line-height: 22px;
+  font-family: inter-medium;
+  display: flex;
+  align-items: center;
+  position; relative;
+  justify-content: space-between;
+  width: 160px;
+  margin: 0;
 
   &:focus {
     border: none;
@@ -84,26 +93,54 @@ const StyledDropdown = styled.select`
     ${space}
     ${flexbox}
     ${bgColor}
-}
+    ${width}
 
 `;
 
-const Dropdown = ({dropdownLabel, Placeholder, Label, HintText, bgColor, children, value, ...props }) => {
+const Dropdown = ({
+  dropdownLabel,
+  Placeholder,
+  Label,
+  HintText,
+  bgColor,
+  children,
+  value,
+  ArrowLabel,
+  onClickArrow,
+  animateIcon,
+  IconLeft,
+  IconLeftName,
+  width,
+  Menuwidth,
+  ...props
+}) => {
   return (
     <Flex.Column>
       {dropdownLabel && (
         <Text.Heading_XXS color={theme.colors.white} mb={1}>
           {Label}
-        </Text.Heading_XXS>)}
+        </Text.Heading_XXS>
+      )}
 
-      <StyledDropdown
-        width="228px"
-        bgColor={bgColor}
-        {...props}
-      >
-        {children}
+      <StyledDropdown bgColor={bgColor} {...props}>
+        {/* {IconLeft && <Icon name={IconLeftName} width="18px" height="18px" />} */}
+        {Placeholder}
+
+        {ArrowLabel}
+
+        <Button.IconOnly
+          sort="secondary"
+          size="xs"
+          iconName="chevron_down"
+          height="12px"
+          width="12px"
+          ml={2}
+          onClick={onClickArrow}
+          Animate={animateIcon}
+        />
       </StyledDropdown>
 
+      {children}
 
       {/* https://stackoverflow.com/questions/40310472/select-input-with-custom-icon */}
       {/* https://www.sitepoint.com/css3-transform-background-image/ */}
