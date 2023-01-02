@@ -16,7 +16,7 @@ import {
 import "../styles/global.css";
 import theme from "../styles/theme";
 import Base from "./Base";
-import text from "../json/games.json";
+import Games from "../json/games.json";
 
 export function Casino() {
   return (
@@ -47,7 +47,7 @@ export function Casino() {
 
           <Flex justifyContent="center" width="592px">
             <Image
-              width="100%"
+              width="496px"
               height="auto"
               src={require("../assets/images/header/header-casino.png")}
               alt=""
@@ -104,7 +104,11 @@ export function Casino() {
           </Link>
         </Flex>
 
-        <Divider size="md" direction="horizontal" color={theme.colors.black_400}/>
+        <Divider
+          size="md"
+          direction="horizontal"
+          color={theme.colors.black_400}
+        />
       </Flex.Column>
 
       <Box mt="56px">
@@ -133,8 +137,34 @@ export function Casino() {
             width="14px"
           />
         </Flex>
+
+
+        <Flex.Row mt="24px">
+          {Games.map((games) => {
+            return (
+              <Box width="228px" mr={3}>
+                <Image
+                  width="100%"
+                  height="auto"
+                  src={require("../assets/images/casino-thumbnail/candy-dreams.png")}
+                  alt=""
+                  borderRadius="8px"
+                />
+                <Box mt="12px">
+                  <Text.Heading_XXS color={theme.colors.white}>
+                    {games.title}
+                  </Text.Heading_XXS>
+                  <Text.P_XS color={theme.colors.white_700}>
+                    {games.provider}
+                  </Text.P_XS>
+                </Box>
+              </Box>
+            );
+          })}
+        </Flex.Row>
         {/* Component */}
-        <Box mt="24px">
+
+        {/* <Box mt="24px">
           <Box width="228px">
             <Image
               width="100%"
@@ -152,7 +182,7 @@ export function Casino() {
               </Text.P_XS>
             </Box>
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </Base>
   );

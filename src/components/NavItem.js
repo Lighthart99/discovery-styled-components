@@ -33,10 +33,14 @@ const NavItem = ({
       height={Height}
       backgroundColor={backgroundColor}
       color={Color}
-
     >
       {/* <Link to={linkTo}> */}
-      <Flex flexGrow="1" height="20px" alignItems="center" justifyContent={justifyContent}>
+      <Flex
+        flexGrow="1"
+        height="20px"
+        alignItems="center"
+        justifyContent={justifyContent}
+      >
         <Icon name={iconName} width="18px" height="18px" />
         <motion.div animate={AnimateLabel}>
           <Text.Heading_XXS_Medium
